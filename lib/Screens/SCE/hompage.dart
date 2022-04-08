@@ -1,6 +1,7 @@
 
 
 import 'package:election_management_system_ems/Constant/style.dart';
+import 'package:election_management_system_ems/Screens/SCE/Widgets/dashboard_page.dart';
 import 'package:election_management_system_ems/Screens/SCE/login.dart';
 import 'package:flutter/material.dart';
 
@@ -20,25 +21,11 @@ class HomePage extends StatelessWidget {
           elevation: 5,
       leading: Row(
         children: [
-         /* Padding(
-          padding: EdgeInsets.only(right: 10.0),
-          child: Container(
-            height: 55,
-          child: IconButton(
-          padding: EdgeInsets.only(left: 15),
-              icon: Icon(Icons.menu), 
-
-              onPressed: (){
-
-              }
-          ),
-          ),
-          ),*/
           Padding(
             padding: EdgeInsets.only(left: 20.0, right: 50.0),
             child: InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
+               Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
               }, // Image tapped
               splashColor: Colors.white10, // Splash color over image
               child: Ink.image(
@@ -57,7 +44,11 @@ class HomePage extends StatelessWidget {
        actions: <Widget>[
          Icon(Icons.dashboard_rounded, color: mustard,),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              body: Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => DashboardPage()));
+
+            },
             child: const Text('Dashboard',
               style: TextStyle(
                 color: Colors.white,
@@ -98,7 +89,9 @@ class HomePage extends StatelessWidget {
           ),
           Padding(padding: EdgeInsets.only(right: 20.0)),
         ],
-    )
+    ),
+    body: DashboardPage(),
+    
     );
   }
 }
