@@ -60,35 +60,55 @@ class _DashboardPageState extends State<DashboardPage> {
             const SizedBox(
               height: 20,
             ),
-            TextField(
-              onChanged: (value) => _runFilter(value),
-              decoration: const InputDecoration(
-                  labelText: 'Search', suffixIcon: Icon(Icons.search)),
-            
-            ),
-            /*Expanded(
+            Row(
+              children: [
+                Expanded(
+                  flex: 5,
+                  child:Padding(
+                    padding: EdgeInsets.only(right: 200.0),
+                  child: TextField(
+                    onChanged: (value) => _runFilter(value),
+                    decoration: const InputDecoration(
+                        labelText: 'Search', suffixIcon: Icon(Icons.search)),
+                  
+                  ),
+                  )
+                ),
+            Expanded(
+              flex: 2,
               child: Padding(
-                padding: EdgeInsets.only(left: 20.0),
-                // ignore_for_file: deprecated_member_use
-                child: FlatButton(
-                  color: mustard,
-                  onPressed: () {
+                padding: EdgeInsets.only(left: 50.0),
+                child: FloatingActionButton.extended(
+                  backgroundColor: mustard,
+                  icon: Icon(
+                    Icons.create,
+                    color: Colors.white,
 
-                  },
-                  child: Text(
+                  ),
+                  label: Text(
                     'Create Election',
+                
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 15.0
+                      fontSize: 15.0,
+                      color: Colors.white,
 
                     ),
+                    
+                    
                   ),
+                   onPressed: () {
+
+                  },
+                  
                 ),
               
              
               ),
 
-              ),*/
+              ),
+              ]
+            ),
            
             const SizedBox(
               height: 20,
@@ -99,15 +119,20 @@ class _DashboardPageState extends State<DashboardPage> {
                       itemCount: _foundUsers.length,
                       itemBuilder: (context, index) => Card(
                         key: ValueKey(_foundUsers[index]["id"]),
-                        color: Colors.amberAccent,
-                        elevation: 4,
+                        color: Colors.blueGrey,
+                        elevation: 5,
                         margin: const EdgeInsets.symmetric(vertical: 10),
                         child: ListTile(
                           leading: Text(
                             _foundUsers[index]["id"].toString(),
                             style: const TextStyle(fontSize: 24),
                           ),
-                          title: Text(_foundUsers[index]['name']),
+                          title: Text(
+                            _foundUsers[index]['name'],
+                            style: TextStyle(
+                              fontWeight: FontWeight.w900
+                            ),
+                            ),
                           subtitle: Text(
                               '${_foundUsers[index]["status"].toString()}'),
                         ),
