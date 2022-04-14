@@ -64,10 +64,10 @@ class _DashboardPageState extends State<DashboardPage> {
             ),
             Row(
               children: [
+                Padding(
+                    padding: EdgeInsets.only(left: 10.0),),
                 Expanded(
                   flex: 5,
-                  child:Padding(
-                    padding: EdgeInsets.only(right: 200.0),
                   child: TextField(
                   
                     onChanged: (value) => _runFilter(value),
@@ -75,10 +75,12 @@ class _DashboardPageState extends State<DashboardPage> {
                         labelText: 'Search', suffixIcon: Icon(Icons.search,)),
                   
                   ),
-                  )
+                  
                 ),
+                   Padding(
+                    padding: EdgeInsets.only(right: 200.0)),
             Expanded(
-              flex: 2,
+              flex: 1,
                 child: FloatingActionButton.extended(
                   backgroundColor: mustard,
                   icon: Icon(
@@ -103,7 +105,9 @@ class _DashboardPageState extends State<DashboardPage> {
                   },
                   
                 ),
-                )
+                ),
+                   Padding(
+                    padding: EdgeInsets.only(right: 10.0)),
             
               ]
             ),
