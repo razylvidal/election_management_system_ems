@@ -1,13 +1,13 @@
 
 
 import 'package:election_management_system_ems/Constant/style.dart';
-import 'package:election_management_system_ems/Screens/SCE/Widgets/dashboard_page.dart';
-import 'package:election_management_system_ems/Screens/SCE/app_bar.dart';
+import 'package:election_management_system_ems/Screens/SCE/Widgets/accounts.dart';
+import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
 import 'package:election_management_system_ems/Screens/SCE/login.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({ Key? key }) : super(key: key);
+class TopNavigator extends StatelessWidget {
+  const TopNavigator({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,8 +58,7 @@ class HomePage extends StatelessWidget {
           Icon(Icons.manage_accounts, color: mustard,),
           TextButton(
             onPressed: () {
-               Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => TopNavigator()));
+              Navigator.push(context, MaterialPageRoute(builder: (_) => TopNavigator()));
             },
             child: const Text('Accounts',
               style: TextStyle(
@@ -90,7 +89,7 @@ class HomePage extends StatelessWidget {
           Padding(padding: EdgeInsets.only(right: 20.0)),
         ],
     ),
-    body: DashboardPage(),
+    body: AccountPage(),
     
     );
   }

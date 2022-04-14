@@ -160,6 +160,7 @@ class __UserState extends State<_User> {
             Padding(
               padding: EdgeInsets.only(right: 100.0, left: 100.0),
               child: DropdownButtonFormField(
+
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
 
@@ -173,7 +174,7 @@ class __UserState extends State<_User> {
                   filled: true,
                   fillColor: Colors.grey[350],
                 ),
-                validator: (value) => value == null ? "Select a country" : null,
+                //validator: (value) => value == null ? "Select a country" : null,
                 dropdownColor: Colors.grey[300],
                 value: selectedValue,
                 onChanged: (String? newValue) {
