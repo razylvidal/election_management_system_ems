@@ -17,7 +17,7 @@ class _DashboardPageState extends State<DashboardPage> {
   // You can use data fetched from a database or a server as well
   final List<Map<String, dynamic>> _allUsers = [
     {"id": 1, "name": "SSG Election 2022", "status": "Ongoing", "start": "01/02/2022, 3:00PM", "end": "01/07/2022, 3:00PM"},
-    {"id": 2, "name": "SSG Election 2021", "status": "Building", "start": "01/02/2022, 3:00PM", "end": "01/07/2022, 3:00PM"},
+    {"id": 2, "name": "SSG Election 2021", "status": "Completed", "start": "01/02/2022, 3:00PM", "end": "01/07/2022, 3:00PM"},
     {"id": 3, "name": "SSG Election 2020", "status": "Completed", "start": "01/02/2022, 3:00PM", "end": "01/07/2022, 3:00PM"},
    
   ];
@@ -53,8 +53,10 @@ class _DashboardPageState extends State<DashboardPage> {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-        padding: const EdgeInsets.only(top:10.0, left: 100.0, right: 100.0),
+    return  Container(
+      width: MediaQuery.of(context).size.width,
+     child: Padding(
+        padding: const EdgeInsets.only(top:10.0, left: 50.0, right: 50.0),
         child: Column(
           children: [
             const SizedBox(
@@ -67,17 +69,16 @@ class _DashboardPageState extends State<DashboardPage> {
                   child:Padding(
                     padding: EdgeInsets.only(right: 200.0),
                   child: TextField(
+                  
                     onChanged: (value) => _runFilter(value),
                     decoration: const InputDecoration(
-                        labelText: 'Search', suffixIcon: Icon(Icons.search)),
+                        labelText: 'Search', suffixIcon: Icon(Icons.search,)),
                   
                   ),
                   )
                 ),
             Expanded(
               flex: 2,
-              child: Padding(
-                padding: EdgeInsets.only(left: 50.0),
                 child: FloatingActionButton.extended(
                   backgroundColor: mustard,
                   icon: Icon(
@@ -102,11 +103,8 @@ class _DashboardPageState extends State<DashboardPage> {
                   },
                   
                 ),
-              
-             
-              ),
-
-              ),
+                )
+            
               ]
             ),
            
@@ -140,11 +138,13 @@ class _DashboardPageState extends State<DashboardPage> {
                     )
                   : const Text(
                       'No results found',
-                      style: TextStyle(fontSize: 24),
+                      style: TextStyle(
+                        fontSize: 24),
                     ),
             ),
           ],
         )
+      )
     );
   }
 }
