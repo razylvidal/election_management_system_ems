@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner:false,
       title: 'Election Management System',
-      home: TopNavigator()
+      home: HomePage()
 
     );
   }

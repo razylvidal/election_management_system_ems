@@ -6,13 +6,9 @@ import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
 import 'package:election_management_system_ems/Screens/SCE/login.dart';
 import 'package:flutter/material.dart';
 
-class TopNavigator extends StatelessWidget {
-  const TopNavigator({ Key? key }) : super(key: key);
+AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-    appBar: AppBar(
+ AppBar(
        backgroundColor:darkBlue,
           shadowColor: Colors.grey,
           leadingWidth: 250,
@@ -58,7 +54,7 @@ class TopNavigator extends StatelessWidget {
           Icon(Icons.manage_accounts, color: mustard,),
           TextButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (_) => TopNavigator()));
+             Navigator.push(context, MaterialPageRoute(builder: (_) => AccountPage()));
             },
             child: const Text('Accounts',
               style: TextStyle(
@@ -88,9 +84,4 @@ class TopNavigator extends StatelessWidget {
           ),
           Padding(padding: EdgeInsets.only(right: 20.0)),
         ],
-    ),
-    body: AccountPage(),
-    
     );
-  }
-}
