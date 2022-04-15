@@ -1,6 +1,8 @@
 import 'package:election_management_system_ems/Constant/style.dart';
+import 'package:election_management_system_ems/Screens/SCE/Widgets/add_user.dart';
 import 'package:election_management_system_ems/Screens/SCE/app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AccountPage extends StatelessWidget {
   
@@ -47,7 +49,10 @@ class AccountPage extends StatelessWidget {
                     
                     
                   ),
-              onPressed: (){},
+              onPressed: (){
+                 Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => AddUser()));
+              },
             )
           ),
           Padding(padding: EdgeInsets.only(left: 100)),

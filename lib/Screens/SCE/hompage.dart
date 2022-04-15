@@ -109,23 +109,16 @@ class _DashboardPageState extends State<DashboardPage> {
                       fontWeight: FontWeight.bold,
                       fontSize: 15.0,
                       color: Colors.white,
-
                     ),
-                    
-                    
                   ),
                    onPressed: () {
 
                   },
-                  
                 ),
                 ),
-                   Padding(
-                    padding: EdgeInsets.only(right: 10.0)),
-            
+                Padding(padding: EdgeInsets.only(right: 10.0)),
               ]
             ),
-           
             const SizedBox(
               height: 20,
             ),
