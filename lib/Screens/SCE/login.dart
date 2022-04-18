@@ -1,3 +1,4 @@
+import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -14,7 +15,8 @@ class LoginPage extends StatelessWidget {
           child: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
+            color: darkBlue,
+           /* decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -25,7 +27,7 @@ class LoginPage extends StatelessWidget {
                 ] 
                 )
 
-            ),
+            ),*/
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget> [
@@ -42,10 +44,18 @@ class LoginPage extends StatelessWidget {
                 Container(
                   height: 380,
                   width: 600,
-                  decoration: BoxDecoration(  
-                  border: Border.all(color: Colors.grey, width: 1),  
+                  decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(0xFF293045),
+                  Color(0xFF4A6488),
+                  Color(0xFF223C5B),
+                ] 
+                ),  
+                  border: Border.all(color: darkBlue, width: 1),  
                   borderRadius: BorderRadius.circular(10), 
-                  color: Colors.blueGrey,
                   boxShadow: const [  
                         BoxShadow(
                         color: Colors.black87,
@@ -94,13 +104,13 @@ class LoginPage extends StatelessWidget {
                           height: 40,
                           width: 150,
                           decoration: BoxDecoration(
-                              color: Color(0xFF091C32),
+                              color: mustard,
                               borderRadius: BorderRadius.circular(20),
                                 boxShadow: const [  
                                   BoxShadow(
-                                  color: Colors.black87,
-                                  offset: Offset(6.0, 6.0),
-                                  blurRadius: 10.0,
+                                  color: Colors.black26,
+                                  offset: Offset(2.0, 2.0),
+                                  blurRadius: 3.0,
                                 ), 
                               ]
                             ),    
@@ -161,7 +171,7 @@ class __UserState extends State<_User> {
               padding: EdgeInsets.only(right: 100.0, left: 100.0),
               child: DropdownButtonFormField(
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.supervised_user_circle),
+                  //prefixIcon: Icon(Icons.supervised_user_circle),
                   enabledBorder: OutlineInputBorder(
 
                     borderSide: BorderSide(color: Colors.grey, width: 2),
@@ -182,10 +192,10 @@ class __UserState extends State<_User> {
                     selectedValue = newValue!;
                   });
                 },
-                items: [
+                items: const [
                   DropdownMenuItem(
                     child: Text(
-                      'Admin',
+                      '   Admin',
                       style: TextStyle(
                         fontWeight: FontWeight.w900,
                       ),
@@ -194,7 +204,7 @@ class __UserState extends State<_User> {
                   ),
                    DropdownMenuItem(
                     child: Text(
-                      'Voter',
+                      '   Voter',
                        style: TextStyle(
                         fontWeight: FontWeight.w900,
                       ),
@@ -203,7 +213,7 @@ class __UserState extends State<_User> {
                   ),
                    DropdownMenuItem(
                     child: Text(
-                      'Campaign Manager',
+                      '   Campaign Manager',
                        style: TextStyle(
                         fontWeight: FontWeight.w900,
                       ),
@@ -299,6 +309,7 @@ class __UsernameState extends State<_Username> {
       padding: EdgeInsets.only(left: 100.0 , right: 100.0),
       child: TextField(
                decoration: InputDecoration(
+                 prefixText: '   ',
                  suffixIcon: Icon(Icons.person),
                   enabledBorder: OutlineInputBorder(
 
@@ -334,6 +345,7 @@ class __PasswordState extends State<_Password> {
       child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
+                  prefixText: '   ',
                   suffixIcon: IconButton(
                     onPressed: (){},
                     icon: Icon(Icons.visibility_off_outlined)
