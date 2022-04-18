@@ -1,6 +1,7 @@
 
 
 import 'package:election_management_system_ems/Constant/style.dart';
+import 'package:election_management_system_ems/Screens/SCE/Widgets/create_election.dart';
 import 'package:election_management_system_ems/Screens/SCE/app_bar.dart';
 import 'package:election_management_system_ems/Screens/SCE/login.dart';
 import 'package:flutter/material.dart';
@@ -101,10 +102,9 @@ class _DashboardPageState extends State<DashboardPage> {
                     Icons.create,
                     color: Colors.white,
 
-                  ),
+                    ),
                   label: Text(
                     'Create Election',
-                
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 15.0,
@@ -112,6 +112,7 @@ class _DashboardPageState extends State<DashboardPage> {
                     ),
                   ),
                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (_) => CreateElectionPage()));
 
                   },
                 ),

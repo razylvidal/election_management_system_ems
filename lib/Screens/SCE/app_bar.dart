@@ -37,12 +37,12 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
       ]
       ),
        actions: <Widget>[
-         Icon(Icons.dashboard_rounded, color: mustard,),
-          TextButton(
+          TextButton.icon(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
             },
-            child: const Text('Dashboard',
+            icon: Icon(Icons.dashboard_rounded, color: mustard,),
+            label: Text('Dashboard',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -51,12 +51,12 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
               ),
           ),
           Padding(padding: EdgeInsets.only(right: 20.0)),
-          Icon(Icons.manage_accounts, color: mustard,),
-          TextButton(
+          TextButton.icon(
             onPressed: () {
              Navigator.push(context, MaterialPageRoute(builder: (_) => AccountPage()));
             },
-            child: const Text('Accounts',
+            icon: Icon(Icons.manage_accounts, color: mustard,),
+            label: Text('Accounts',
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -65,14 +65,14 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
             ),
           ),
            Padding(padding: EdgeInsets.only(right: 20.0)),
-          Icon(Icons.exit_to_app, color: mustard,),
-          TextButton(
+          TextButton.icon(
             onPressed: () {
                Navigator.push(
                     context, MaterialPageRoute(builder: (_) => LoginPage()));
 
             },
-            child: const Text(
+            icon:   Icon(Icons.exit_to_app, color: mustard,),
+            label: Text(
               'Sign Out',
               style: TextStyle(
                 color: Colors.white,
