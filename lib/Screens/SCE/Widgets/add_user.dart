@@ -52,6 +52,7 @@ class AddUser extends StatelessWidget {
                         flex: 3,
                         child: TextField(
                             decoration: InputDecoration(
+                               prefixText: '   ',
                               suffixIcon: Icon(Icons.assignment_ind_outlined),
                               enabledBorder: OutlineInputBorder(
 
@@ -85,6 +86,7 @@ class AddUser extends StatelessWidget {
                         flex: 3,
                         child: TextField(
                             decoration: InputDecoration(
+                              prefixText: '   ',
                               suffixIcon: Icon(Icons.person_outline_rounded),
                               enabledBorder: OutlineInputBorder(
 
@@ -120,6 +122,7 @@ class AddUser extends StatelessWidget {
                         child: TextField(
                            obscureText: true,
                             decoration: InputDecoration(
+                               prefixText: '   ',
                               suffixIcon: IconButton(
                                 onPressed: () {
                                   
@@ -223,6 +226,7 @@ class _UserState extends State<User> {
             DropdownButtonFormField(
 
                 decoration: InputDecoration(
+                   prefixText: '   ',
                   enabledBorder: OutlineInputBorder(
 
                     borderSide: BorderSide(color: Colors.grey, width: 2),

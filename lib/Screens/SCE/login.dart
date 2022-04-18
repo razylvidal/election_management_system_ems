@@ -69,7 +69,7 @@ class LoginPage extends StatelessWidget {
                     children: [
                       SizedBox(height: 35),
                       Text(
-                        'Please enter your username and password to continue',
+                        'Please provide the following details to continue',
                         style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w400,
