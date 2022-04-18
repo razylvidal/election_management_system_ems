@@ -160,8 +160,8 @@ class __UserState extends State<_User> {
             Padding(
               padding: EdgeInsets.only(right: 100.0, left: 100.0),
               child: DropdownButtonFormField(
-
                 decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.supervised_user_circle),
                   enabledBorder: OutlineInputBorder(
 
                     borderSide: BorderSide(color: Colors.grey, width: 2),
@@ -299,6 +299,7 @@ class __UsernameState extends State<_Username> {
       padding: EdgeInsets.only(left: 100.0 , right: 100.0),
       child: TextField(
                decoration: InputDecoration(
+                 suffixIcon: Icon(Icons.person),
                   enabledBorder: OutlineInputBorder(
 
                     borderSide: BorderSide(color: Colors.grey, width: 2),
@@ -333,6 +334,10 @@ class __PasswordState extends State<_Password> {
       child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
+                  suffixIcon: IconButton(
+                    onPressed: (){},
+                    icon: Icon(Icons.visibility_off_outlined)
+                    ),
                   enabledBorder: OutlineInputBorder(
 
                     borderSide: BorderSide(color: Colors.grey, width: 2),

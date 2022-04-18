@@ -51,8 +51,8 @@ class AddUser extends StatelessWidget {
                       Expanded(
                         flex: 3,
                         child: TextField(
-                           obscureText: true,
                             decoration: InputDecoration(
+                              suffixIcon: Icon(Icons.assignment_ind_outlined),
                               enabledBorder: OutlineInputBorder(
 
                                 borderSide: BorderSide(color: Colors.grey, width: 2),
@@ -84,8 +84,8 @@ class AddUser extends StatelessWidget {
                       Expanded(
                         flex: 3,
                         child: TextField(
-                           obscureText: true,
                             decoration: InputDecoration(
+                              suffixIcon: Icon(Icons.person_outline_rounded),
                               enabledBorder: OutlineInputBorder(
 
                                 borderSide: BorderSide(color: Colors.grey, width: 2),
@@ -120,6 +120,12 @@ class AddUser extends StatelessWidget {
                         child: TextField(
                            obscureText: true,
                             decoration: InputDecoration(
+                              suffixIcon: IconButton(
+                                onPressed: () {
+                                  
+                                },
+                                icon: Icon(Icons.visibility_off_outlined),
+                                ),
                               enabledBorder: OutlineInputBorder(
 
                                 borderSide: BorderSide(color: Colors.grey, width: 2),

@@ -132,6 +132,9 @@ class _DashboardPageState extends State<DashboardPage> {
                         elevation: 5,
                         margin: const EdgeInsets.symmetric(vertical: 10),
                         child: ListTile(
+                          onTap: (){
+                            
+                          },
                           leading: Text(
                             _foundUsers[index]["id"].toString(),
                             style: const TextStyle(fontSize: 24),
