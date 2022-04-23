@@ -1,7 +1,8 @@
 import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/SCE/app_bar.dart';
-import 'package:election_management_system_ems/Screens/SCE/overview.dart';
+import 'package:election_management_system_ems/Screens/SCE/menu.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class CreateElectionPage extends StatelessWidget {
   //GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
@@ -123,7 +124,7 @@ class CreateElectionPage extends StatelessWidget {
                                         ),
                                      ),
                                      Padding(padding: EdgeInsets.only(left: 15.0)),
-                                     //timezone
+                                     //end date
                                      Expanded(
                                        child: TextField(
                                         decoration: InputDecoration(
@@ -158,7 +159,9 @@ class CreateElectionPage extends StatelessWidget {
                                           suffixText: '   ',
                                           suffixIcon: IconButton(
                                             icon: Icon(Icons.more_time_outlined),
-                                            onPressed: (){},
+                                            onPressed: (){
+                                              
+                                            },
                                           ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(color: Colors.grey, width: 1),
@@ -182,7 +185,7 @@ class CreateElectionPage extends StatelessWidget {
                                    child: TextButton.icon(
                                     onPressed: (){
                                       Navigator.push(
-                                  context, MaterialPageRoute(builder: (_) => OverviewPage()));
+                                  context, MaterialPageRoute(builder: (_) => SideMenu()));
                                     },  
                                     label: Text(
                                       'Next',
@@ -218,3 +221,4 @@ class CreateElectionPage extends StatelessWidget {
   
   }
 }
+

@@ -1,5 +1,6 @@
 import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
+import 'package:election_management_system_ems/Screens/SCE/login.dart';
 import 'package:flutter/material.dart';
 
 AppBar TopNavBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
@@ -31,6 +32,27 @@ AppBar TopNavBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
           ),
       ]
       ),
+      actions: <Widget>[
+        TextButton.icon(
+            onPressed: () {
+               Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => LoginPage()));
+
+            },
+            icon:   Icon(Icons.exit_to_app, color: mustard,),
+            label: Text(
+              'Sign Out',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 17.0,
+              ),
+              
+            ),
+          ),
+          Padding(padding: EdgeInsets.only(right: 20.0)),
+
+      ]
     
     );
  
