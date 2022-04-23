@@ -7,10 +7,10 @@ import '../Controllers/menuController.dart';
 import '../Helpers/local_navigator.dart';
 import 'package:get/get.dart';
 
-class ViewMenuItems extends StatelessWidget {
+class HorizontalMenuItems extends StatelessWidget {
     final String itemName;
    //final Function onTap;
-  const ViewMenuItems({  Key? key,  required this.itemName,  /*this.onTap */}) : super(key: key);
+  const HorizontalMenuItems({  Key? key,  required this.itemName,  /*this.onTap */}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
