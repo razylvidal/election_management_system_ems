@@ -1,15 +1,17 @@
+import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:flutter/material.dart';
 
-class OverviewPage extends StatelessWidget {
-  const OverviewPage({ Key? key }) : super(key: key);
+class VoterPage extends StatelessWidget {
+  const VoterPage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueAccent,
+      color: blue,
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      child: Text('overview'),
+      child: Text('voter'),
+    
     );
   }
 }
