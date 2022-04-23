@@ -25,7 +25,7 @@ class MenuController extends GetxController{
   Widget returnIconFor(String itemName){
     switch(itemName){
       case OverviewPageRoute:
-        return _customIcon(Icons.dashboard, itemName);
+        return _customIcon(Icons.home, itemName);
       case ElectionPageRoute:
         return _customIcon(Icons.how_to_vote_rounded,itemName);
        case CandidatePageRoute:

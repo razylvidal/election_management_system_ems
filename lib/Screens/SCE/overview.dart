@@ -1,3 +1,4 @@
+import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:flutter/material.dart';
 
 class OverviewPage extends StatelessWidget {
@@ -6,10 +7,25 @@ class OverviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueAccent,
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      child: Text('overview'),
+      child: Center(
+        child: Column(
+        children: [
+          Padding(padding: EdgeInsets.only(top:35.0)),
+          Container(
+            child: DefaultTextStyle(
+              style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+                color: blue
+              ), 
+              child: Text('Overview')),
+          )
+
+        ]
+      ),
+      )
     );
   }
 }

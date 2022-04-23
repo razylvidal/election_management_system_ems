@@ -1,6 +1,7 @@
 
 
 import 'package:election_management_system_ems/Constant/style.dart';
+import 'package:election_management_system_ems/Screens/SCE/Helpers/responsiveness.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/create_election.dart';
 import 'package:election_management_system_ems/Screens/SCE/app_bar.dart';
 import 'package:election_management_system_ems/Screens/SCE/login.dart';
@@ -82,29 +83,39 @@ class _DashboardPageState extends State<DashboardPage> {
                 Padding(
                     padding: EdgeInsets.only(left: 10.0),),
                 Expanded(
-                  flex: 5,
                   child: TextField(
-                  
                     onChanged: (value) => _runFilter(value),
                     decoration: const InputDecoration(
-                        labelText: 'Search', suffixIcon: Icon(Icons.search,)),
+                        labelText: 'Search', 
+                        suffixIcon: Icon(Icons.search,)),
+                        
                   
                   ),
                   
                 ),
-                   Padding(
-                    padding: EdgeInsets.only(right: 200.0)),
-            Expanded(
-              flex: 1,
-                child: FloatingActionButton.extended(
-                  backgroundColor: mustard,
+              Spacing(),
+               Container(
+                          height: 50.0,
+                          decoration: BoxDecoration(
+                              color: mustard,
+                              borderRadius: BorderRadius.circular(20),
+                                boxShadow: const [  
+                                  BoxShadow(
+                                  color: Colors.black26,
+                                  offset: Offset(2.0, 2.0),
+                                  blurRadius: 3.0,
+                                ), 
+                              ]
+                            ),    
+              // ignore_for_file: deprecated_member_use
+                child: FlatButton.icon(
                   icon: Icon(
                     Icons.create,
                     color: Colors.white,
 
                     ),
-                  label: Text(
-                    'Create Election',
+                  label: DefaultTextStyle(
+                    child: Text('Create Election'),
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 15.0,
@@ -116,8 +127,8 @@ class _DashboardPageState extends State<DashboardPage> {
 
                   },
                 ),
-                ),
-                Padding(padding: EdgeInsets.only(right: 10.0)),
+               )
+                
               ]
             ),
             const SizedBox(
@@ -161,5 +172,22 @@ class _DashboardPageState extends State<DashboardPage> {
         )
       )
     );
+  }
+}
+class Spacing extends StatefulWidget {
+  const Spacing({ Key? key }) : super(key: key);
+
+  @override
+  State<Spacing> createState() => _SpacingState();
+}
+
+class _SpacingState extends State<Spacing> {
+  @override
+  Widget build(BuildContext context) {
+    if (ResponsiveWidget.isLargeScreen(context)) {
+      return SizedBox(width: 400);
+    } else {
+      return SizedBox(width: 70);
+    }
   }
 }
