@@ -32,7 +32,7 @@ class LoginPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget> [
                 Padding(
-                  padding: EdgeInsets.only(top: 50.0, bottom: 15.0),
+                  padding: EdgeInsets.only(top: 25.0, bottom: 20.0),
                   child: SizedBox(
                     width: 300,
                     height: 160,
@@ -42,7 +42,7 @@ class LoginPage extends StatelessWidget {
                 ),
               
                 Container(
-                  height: 380,
+                  height: 400,
                   width: 600,
                   decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -94,9 +94,10 @@ class LoginPage extends StatelessWidget {
                       ),
                        //input field for password
                       Padding(
-                        padding: EdgeInsets.only(top: 5.0, bottom: 25.0),
+                        padding: EdgeInsets.only(top: 5.0, bottom: 20.0),
                         child: _Password()
                       ),
+                     
                       //login button
                       Padding(
                         padding: EdgeInsets.only(bottom: 10.0),
@@ -132,7 +133,22 @@ class LoginPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                      )
+                      ),
+                       //forgot password button
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 5.0),
+                        child: TextButton.icon(
+                        onPressed: (){},
+                        icon: Icon(Icons.info_outlined, size: 15.0, color: Colors.white,),
+                        label: Text(
+                          'Forgot Password?',
+                          style: TextStyle(
+                            fontSize: 10.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )),
+                      ),
                       
                     ],
                   ),
