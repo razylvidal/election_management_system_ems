@@ -6,10 +6,12 @@ const OverviewPageRoute = 'Overview';
 const ElectionPageRoute = 'Election';
 const CandidatePageRoute = 'Candidate'; 
 const VoterPageRoute = 'Voter'; 
+const AccountPageRoute = 'Accounts'; 
 
 List sideMenuItems = [
   OverviewPageRoute,
   ElectionPageRoute,
   CandidatePageRoute,
-  VoterPageRoute
+  VoterPageRoute,
+  AccountPageRoute
 ];

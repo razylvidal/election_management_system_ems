@@ -28,10 +28,12 @@ class MenuController extends GetxController{
         return _customIcon(Icons.home, itemName);
       case ElectionPageRoute:
         return _customIcon(Icons.how_to_vote_rounded,itemName);
-       case CandidatePageRoute:
+      case CandidatePageRoute:
         return _customIcon(Icons.person,itemName);
-       case VoterPageRoute:
+      case VoterPageRoute:
         return _customIcon(Icons.people_alt,itemName);
+      case AccountPageRoute:
+        return _customIcon(Icons.manage_accounts_sharp,itemName);
         
       default:
         return _customIcon(Icons.dashboard, itemName);
@@ -42,10 +44,10 @@ class MenuController extends GetxController{
   Widget _customIcon(IconData icon, String itemName){
     if(isActive(itemName)) 
       return Icon(icon, 
-      size: 22, 
+      size: 25, 
       color: mustard);
 
-      return Icon(icon, color: isHovering(itemName) ? mustard : Colors.grey);
+      return Icon(icon, color: isHovering(itemName) ? mustard : Colors.grey, size: 22,);
   }
 
 }

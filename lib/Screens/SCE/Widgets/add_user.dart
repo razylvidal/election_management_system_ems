@@ -1,5 +1,4 @@
 import 'package:election_management_system_ems/Constant/style.dart';
-import 'package:election_management_system_ems/Screens/SCE/app_bar.dart';
 import 'package:flutter/material.dart';
 
 class AddUser extends StatelessWidget {
@@ -8,12 +7,11 @@ class AddUser extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: topNavigationBar(context, scaffoldKey),
-      body: Center(
+    return Container(
+        child: Center(
           child: Column(
             children: [
-              Padding(padding: EdgeInsets.only(top: 50)),
+              Padding(padding: EdgeInsets.only(top: 30)),
               Container(
                   height: 450,
                   width: 800,
@@ -51,6 +49,7 @@ class AddUser extends StatelessWidget {
                       Expanded(
                         flex: 3,
                         child: TextField(
+                          
                             decoration: InputDecoration(
                                prefixText: '   ',
                               suffixIcon: Icon(Icons.assignment_ind_outlined),
@@ -257,15 +256,7 @@ class _UserState extends State<User> {
                     ),
                     value: 'Admin',
                   ),
-                   DropdownMenuItem(
-                    child: Text(
-                      'Voter',
-                       style: TextStyle(
-                        fontWeight: FontWeight.w900,
-                      ),
-                    ),
-                    value: 'Voter',
-                  ),
+                
                    DropdownMenuItem(
                     child: Text(
                       'Campaign Manager',
@@ -282,3 +273,4 @@ class _UserState extends State<User> {
       );
   }
 }
+

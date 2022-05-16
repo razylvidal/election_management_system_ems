@@ -42,7 +42,7 @@ class LoginPage extends StatelessWidget {
                 ),
               
                 Container(
-                  height: 400,
+                  height: 405,
                   width: 600,
                   decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -173,7 +173,7 @@ class _User extends StatefulWidget {
 }
 
 class __UserState extends State<_User> {
- String? selectedValue = 'Admin';
+ String? selectedValue = 'SCE Admin';
   final _dropdownFormKey = GlobalKey<FormState>();
 
   @override
@@ -211,12 +211,12 @@ class __UserState extends State<_User> {
                 items: const [
                   DropdownMenuItem(
                     child: Text(
-                      '   Admin',
+                      '   SCE Admin',
                       style: TextStyle(
                         fontWeight: FontWeight.w900,
                       ),
                     ),
-                    value: 'Admin',
+                    value: 'SCE Admin',
                   ),
                    DropdownMenuItem(
                     child: Text(

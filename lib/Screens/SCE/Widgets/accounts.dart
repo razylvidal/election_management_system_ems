@@ -3,32 +3,28 @@
 import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/SCE/Helpers/responsiveness.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/add_user.dart';
-import 'package:election_management_system_ems/Screens/SCE/app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AccountPage extends StatelessWidget {
-  
-   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
-   AccountPage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: topNavigationBar(context, scaffoldKey),
-      body: Row(
+    return Column(
+      children: [
+        SizedBox(height: 30.0),
+        Row(
         children: [
-          SizedBox(height: 100),
           Padding(padding: EdgeInsets.only(left: 100)),
-          Expanded(
-           flex: 2,
-            child: TextField(
+          Expanded(child: 
+          TextField(
               decoration: InputDecoration(
                 label: Text('Search'),
                 suffixIcon: Icon(Icons.search),
               ),
             ),
           ),
+          
           Space(),
           Container(
             height: 50.0,
@@ -67,6 +63,7 @@ class AccountPage extends StatelessWidget {
           Padding(padding: EdgeInsets.only(left: 100)),
         ],
       )
+      ]
     );
   }
 }
@@ -82,7 +79,7 @@ class _SpaceState extends State<Space> {
   @override
   Widget build(BuildContext context) {
     if (ResponsiveWidget.isLargeScreen(context)) {
-      return SizedBox(width: 400);
+      return SizedBox(width: 200);
     } else {
       return SizedBox(width: 70);
     }

@@ -3,7 +3,7 @@
 import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/SCE/Helpers/responsiveness.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/create_election.dart';
-import 'package:election_management_system_ems/Screens/SCE/app_bar.dart';
+import 'package:election_management_system_ems/Screens/SCE/Widgets/topNavBar.dart';
 import 'package:election_management_system_ems/Screens/SCE/login.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: topNavigationBar(context, scaffoldKey),
+    appBar: TopNavBar(context, scaffoldKey),
     body: DashboardPage(),
     
     );
@@ -72,7 +72,7 @@ class _DashboardPageState extends State<DashboardPage> {
     return  Container(
       width: MediaQuery.of(context).size.width,
      child: Padding(
-        padding: const EdgeInsets.only(top:10.0, left: 50.0, right: 50.0),
+        padding: const EdgeInsets.only(top:10.0, left: 150.0, right: 150.0),
         child: Column(
           children: [
             const SizedBox(
