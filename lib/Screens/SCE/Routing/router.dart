@@ -1,4 +1,5 @@
 import 'package:election_management_system_ems/Screens/SCE/Routing/routes.dart';
+import 'package:election_management_system_ems/Screens/SCE/Widgets/accounts.dart';
 import 'package:election_management_system_ems/Screens/SCE/candidate_page.dart';
 import 'package:election_management_system_ems/Screens/SCE/election_page.dart';
 import 'package:election_management_system_ems/Screens/SCE/overview.dart';
@@ -15,6 +16,8 @@ Route <dynamic> generateRoute(RouteSettings settings){
       return _getPageRoute(CandidatePage());
     case VoterPageRoute:
       return _getPageRoute(VoterPage());
+    case AccountPageRoute:
+      return _getPageRoute(AccountPage());
     default:
       return _getPageRoute(OverviewPage());
   }

@@ -1,5 +1,4 @@
 import 'package:election_management_system_ems/Constant/style.dart';
-import 'package:election_management_system_ems/Screens/SCE/app_bar.dart';
 import 'package:election_management_system_ems/Screens/SCE/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
