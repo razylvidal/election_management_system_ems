@@ -5,7 +5,7 @@ import 'package:election_management_system_ems/Screens/SCE/Widgets/add_user.dart
 import 'package:election_management_system_ems/Screens/SCE/Widgets/create_election.dart';
 import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
 import 'package:election_management_system_ems/Screens/SCE/menu.dart';
-import 'package:election_management_system_ems/Screens/SCE/overview.dart';
+import 'package:election_management_system_ems/Screens/SCE/electionPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
