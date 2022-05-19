@@ -3,9 +3,8 @@ import 'package:election_management_system_ems/Screens/SCE/Helpers/local_navigat
 import 'package:election_management_system_ems/Screens/SCE/Widgets/menuItems.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/topNavBar.dart';
 import 'package:election_management_system_ems/Screens/SCE/candidate_page.dart';
-import 'package:election_management_system_ems/Screens/SCE/election_page.dart';
 import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
-import 'package:election_management_system_ems/Screens/SCE/overview.dart';
+import 'package:election_management_system_ems/Screens/SCE/electionPage.dart';
 import 'package:flutter/material.dart';
 import 'Widgets/topNavBar.dart';
 

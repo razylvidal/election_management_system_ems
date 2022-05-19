@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 Navigator localNavigator() => Navigator(
   key: navigationController.navigatorKey,
-  initialRoute: OverviewPageRoute,
+  initialRoute: ElectionPageRoute,
   onGenerateRoute: generateRoute,
 
 

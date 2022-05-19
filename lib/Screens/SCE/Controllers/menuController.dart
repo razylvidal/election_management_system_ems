@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class MenuController extends GetxController{
 
   static MenuController instance = Get.find(); 
-  var activeItem = OverviewPageRoute.obs;
+  var activeItem = ElectionPageRoute.obs;
   var hoverItem = ''.obs;
 
 
@@ -24,8 +24,6 @@ class MenuController extends GetxController{
 
   Widget returnIconFor(String itemName){
     switch(itemName){
-      case OverviewPageRoute:
-        return _customIcon(Icons.home, itemName);
       case ElectionPageRoute:
         return _customIcon(Icons.how_to_vote_rounded,itemName);
       case CandidatePageRoute:

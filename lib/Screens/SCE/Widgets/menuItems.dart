@@ -2,6 +2,7 @@
 import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/SCE/Routing/routes.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/sideMenuItems.dart';
+import 'package:election_management_system_ems/Screens/SCE/electionPage.dart';
 import 'package:flutter/material.dart';
 
 class MenuItems extends StatelessWidget {
@@ -44,7 +45,7 @@ class MenuItems extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children:
                 sideMenuItems.map((itemName) => SideMenuItem(
-                  itemName: itemName == OverviewPageRoute ? 'Overview' : itemName,
+                  itemName: itemName == ElectionPage ? 'Election' : itemName,
 
                  /* onTap: (){
                     if(itemName == AuthenticationPageRoute){

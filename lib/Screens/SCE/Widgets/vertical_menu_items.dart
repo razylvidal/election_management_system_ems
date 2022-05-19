@@ -17,7 +17,7 @@ class VertticalMenuItem extends StatelessWidget {
 
     return InkWell(
         onTap: (){
-           if(itemName == OverviewPageRoute){
+           if(itemName == ElectionPageRoute){
                       //TODO:: go to authentication page
                     }
 
