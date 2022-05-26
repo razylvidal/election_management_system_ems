@@ -1,4 +1,5 @@
 import 'package:election_management_system_ems/Constant/style.dart';
+import 'package:election_management_system_ems/Screens/SCE/Widgets/accounts.dart';
 import 'package:flutter/material.dart';
 
 class AddUser extends StatelessWidget {
@@ -184,6 +185,8 @@ class AddUser extends StatelessWidget {
                           // ignore: deprecated_member_use
                           child: FlatButton(
                             onPressed: () {
+                                   Navigator.push(context, MaterialPageRoute(builder: (_) => AccountPage()));
+
                             },
                             child: const Text(
                               'Add User',
