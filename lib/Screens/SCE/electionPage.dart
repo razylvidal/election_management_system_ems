@@ -1,4 +1,5 @@
 import 'package:election_management_system_ems/Constant/style.dart';
+import 'package:election_management_system_ems/Screens/SCE/Widgets/result.dart';
 import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
 import 'package:flutter/material.dart';
 
@@ -50,6 +51,7 @@ class ElectionPage extends StatelessWidget {
                       child: TextField(
                                 decoration: InputDecoration(
                                   prefixText: '   ',
+                                  suffixIcon: Icon(Icons.ballot_outlined),
                                     enabledBorder: OutlineInputBorder(
 
                                       borderSide: BorderSide(color: Colors.black, width: 1),
@@ -82,7 +84,6 @@ class ElectionPage extends StatelessWidget {
                       child: TextField(
                                         decoration: InputDecoration(
                                           prefixText: '   ',
-                                          suffixText: '   ',
                                          suffixIcon: IconButton(
                                             icon: Icon(Icons.date_range),
                                             onPressed: (){},
@@ -105,7 +106,7 @@ class ElectionPage extends StatelessWidget {
                  Row(
                   children: [
                     Padding(padding: EdgeInsets.only(left: 50.0, top: 60.0)),
-                    Text(
+                    const Text(
                       'End Date: ',
                     style: TextStyle(
                       fontSize: 20.0,
@@ -119,17 +120,16 @@ class ElectionPage extends StatelessWidget {
                       child: TextField(
                                         decoration: InputDecoration(
                                           prefixText: '   ',
-                                          suffixText: '   ',
                                          suffixIcon: IconButton(
                                             icon: Icon(Icons.date_range),
                                             onPressed: (){},
                                           ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(color: Colors.black, width: 1),
+                                              borderSide: const BorderSide(color: Colors.black, width: 1),
                                               borderRadius: BorderRadius.circular(10),
                                             ),
                                             border: OutlineInputBorder(
-                                              borderSide: BorderSide(color: Colors.black, width: 1),
+                                              borderSide: const BorderSide(color: Colors.black, width: 1),
                                               borderRadius: BorderRadius.circular(10),
                                             ),
                                             
@@ -141,32 +141,31 @@ class ElectionPage extends StatelessWidget {
                 ),
                  Row(
                   children: [
-                    Padding(padding: EdgeInsets.only(left: 50.0, top: 60.0)),
-                    Text(
+                    const Padding(padding: EdgeInsets.only(left: 50.0, top: 60.0)),
+                    const Text(
                       'Timezone: ',
                     style: TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold
                     ),
                     ),
-                    Padding(padding: EdgeInsets.only(left: 59.0 , top: 60.0)),
+                    const Padding(padding: EdgeInsets.only(left: 59.0 , top: 60.0)),
                     Container(
                       width: 350.0,
                       height: 45.0,
                       child: TextField(
                                         decoration: InputDecoration(
                                           prefixText: '   ',
-                                          suffixText: '   ',
                                          suffixIcon: IconButton(
                                             icon: Icon(Icons.timer_outlined),
                                             onPressed: (){},
                                           ),
                                             enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(color: Colors.black, width: 1),
+                                              borderSide: const BorderSide(color: Colors.black, width: 1),
                                               borderRadius: BorderRadius.circular(10),
                                             ),
                                             border: OutlineInputBorder(
-                                              borderSide: BorderSide(color: Colors.black, width: 1),
+                                              borderSide: const BorderSide(color: Colors.black, width: 1),
                                               borderRadius: BorderRadius.circular(10),
                                             ),
                                             
@@ -178,7 +177,7 @@ class ElectionPage extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                              Padding(padding: EdgeInsets.only( left: 200.0)),
+                              const Padding(padding: EdgeInsets.only( left: 200.0)),
                               Container(
                             height: 50.0,
                             decoration: BoxDecoration(
@@ -311,8 +310,8 @@ class ElectionPage extends StatelessWidget {
                     ),
                     child: FlatButton.icon(
                       onPressed: (){
-                         /*Navigator.push(
-                                  context, MaterialPageRoute(builder: (_) => HomePage()));*/
+                         Navigator.push(
+                                  context, MaterialPageRoute(builder: (_) => ResultPage()));
                       }, 
                       icon: Icon(Icons.list, size: 40.0,color: Colors.white,), 
                       label: Text('        View Result',style: TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold),)),

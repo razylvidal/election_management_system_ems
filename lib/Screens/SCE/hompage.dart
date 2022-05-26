@@ -72,7 +72,7 @@ class _DashboardPageState extends State<DashboardPage> {
     return  Container(
       width: MediaQuery.of(context).size.width,
      child: Padding(
-        padding: const EdgeInsets.only(top:10.0, left: 150.0, right: 150.0),
+        padding: const EdgeInsets.only(top:10.0, left: 300.0, right: 300.0),
         child: Column(
           children: [
             const SizedBox(
@@ -185,7 +185,7 @@ class _SpacingState extends State<Spacing> {
   @override
   Widget build(BuildContext context) {
     if (ResponsiveWidget.isLargeScreen(context)) {
-      return SizedBox(width: 400);
+      return SizedBox(width: 150);
     } else {
       return SizedBox(width: 70);
     }
