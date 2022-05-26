@@ -15,19 +15,18 @@ class LoginPage extends StatelessWidget {
           child: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            color: darkBlue,
-           /* decoration: BoxDecoration(
+            //color: darkBlue,
+         /* decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  Color(0xFF293045),
-                  Color(0xFF4A6488),
-                  Color(0xFF223C5B),
+                  darkBlue, blue2, darkBlue
                 ] 
                 )
 
             ),*/
+            color: darkBlue,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget> [
@@ -42,27 +41,26 @@ class LoginPage extends StatelessWidget {
                 ),
               
                 Container(
-                  height: 405,
+                  height: 407,
                   width: 600,
-                  decoration: BoxDecoration(
-                  gradient: LinearGradient(
+                 decoration: BoxDecoration(
+                  /*gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  Color(0xFF293045),
-                  Color(0xFF4A6488),
-                  Color(0xFF223C5B),
+                  darkBlue, blue2,blue3,blue2, darkBlue
                 ] 
-                ),  
-                  border: Border.all(color: darkBlue, width: 1),  
+                ),  */
+                color: Colors.blueGrey,
+                  border: Border.all(color: Colors.black, width: 1),  
                   borderRadius: BorderRadius.circular(10), 
-                  boxShadow: const [  
+                  /*boxShadow: const [  
                         BoxShadow(
-                        color: Colors.black87,
+                        color: Colors.black12,
                         offset: Offset(6.0, 6.0),
-                        blurRadius: 10.0,
+                        blurRadius: 5.0,
                       ), 
-                  ]
+                  ]*/
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,13 +87,52 @@ class LoginPage extends StatelessWidget {
                       ),
                       //input field for username
                       Padding(
-                        padding: EdgeInsets.only(bottom: 10.0),
-                        child: _Username()
-                      ),
+                        padding: EdgeInsets.only(bottom: 10.0, left: 100.0 , right: 100.0),
+                        child: TextField(
+                                decoration: InputDecoration(
+                                  prefixText: '   ',
+                                  suffixIcon: Icon(Icons.person),
+                                    enabledBorder: OutlineInputBorder(
+
+                                      borderSide: BorderSide(color: Colors.grey, width: 2),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderSide: BorderSide(color: Colors.grey, width: 2),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    filled: true,
+                                    fillColor: Colors.grey[350],
+                                    hintText: 'Username',
+                                  ),
+                                )
+                      
+                                ),
+                      
                        //input field for password
                       Padding(
-                        padding: EdgeInsets.only(top: 5.0, bottom: 20.0),
-                        child: _Password()
+                        padding: EdgeInsets.only(top: 5.0, bottom: 20.0, left: 100.0 , right: 100.0),
+                        child: TextField(
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            prefixText: '   ',
+                            suffixIcon: IconButton(
+                              onPressed: (){},
+                              icon: Icon(Icons.visibility_off_outlined)
+                              ),
+                            enabledBorder: OutlineInputBorder(
+
+                              borderSide: BorderSide(color: Colors.grey, width: 2),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            border: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.grey, width: 2),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            filled: true,
+                            fillColor: Colors.grey[350],
+                            hintText: 'Password'),
+                        )
                       ),
                      
                       //login button
@@ -273,7 +310,7 @@ class __DepartmentState extends State<_Department> {
                   id = 1;
                 });
               },
-              activeColor: Color(0xFF091C32),
+              activeColor: mustard,
             ),
             Text(
               'JHS',
@@ -294,7 +331,7 @@ class __DepartmentState extends State<_Department> {
                   id = 2;
                 });
               },
-              activeColor: Color(0xFF091C32),
+              activeColor: mustard,
             ),
             Text(
               'SHS',
@@ -311,75 +348,4 @@ class __DepartmentState extends State<_Department> {
   }
 }
 
-class _Username extends StatefulWidget {
-  const _Username({ Key? key }) : super(key: key);
 
-  @override
-  State<_Username> createState() => __UsernameState();
-}
-
-class __UsernameState extends State<_Username> {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 100.0 , right: 100.0),
-      child: TextField(
-               decoration: InputDecoration(
-                 prefixText: '   ',
-                 suffixIcon: Icon(Icons.person),
-                  enabledBorder: OutlineInputBorder(
-
-                    borderSide: BorderSide(color: Colors.grey, width: 2),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  filled: true,
-                  fillColor: Colors.grey[350],
-                  hintText: 'Username',
-                ),
-              )
-     
-    );
-  }
-}
-
-class _Password extends StatefulWidget {
-  const _Password({ Key? key }) : super(key: key);
-
-  @override
-  State<_Password> createState() => __PasswordState();
-}
-
-class __PasswordState extends State<_Password> {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 100.0 , right: 100.0),
-      child: TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  prefixText: '   ',
-                  suffixIcon: IconButton(
-                    onPressed: (){},
-                    icon: Icon(Icons.visibility_off_outlined)
-                    ),
-                  enabledBorder: OutlineInputBorder(
-
-                    borderSide: BorderSide(color: Colors.grey, width: 2),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  filled: true,
-                  fillColor: Colors.grey[350],
-                  hintText: 'Password'),
-              )
-    );
-
-  }
-}
