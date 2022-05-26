@@ -1,14 +1,10 @@
-import 'dart:math';
-
 import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/SCE/Helpers/responsiveness.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/result.dart';
-import 'package:election_management_system_ems/Screens/SCE/add_candidate.dart';
-import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
 import 'package:flutter/material.dart';
 
-class CandidatePage extends StatelessWidget {
-  const CandidatePage({ Key? key }) : super(key: key);
+class AddCandidatePage extends StatelessWidget {
+  const AddCandidatePage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +31,10 @@ class CandidatePage extends StatelessWidget {
            Row(
              children: [
                Padding(padding: EdgeInsets.only(left: 50.0)),
-          Expanded(child: 
+          Container(
+            width: 500.0,
+            height: 50.0,
+            child: 
           TextField(
               decoration: InputDecoration(
                 label: Text('Search'),
@@ -44,42 +43,7 @@ class CandidatePage extends StatelessWidget {
             ),
           ),
           
-          Space(),
-          Container(
-            height: 50.0,
-            decoration: BoxDecoration(
-            color: mustard,
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: const [  
-              BoxShadow(
-                color: Colors.black26,
-                offset: Offset(2.0, 2.0),
-                blurRadius: 3.0,
-              ), 
-            ]
-            ),  
-          // ignore_for_file: deprecated_member_use  
-          child: FlatButton.icon(
-            icon: Icon(
-              Icons.person_add_alt_rounded,
-              color: Colors.white,
-
-            ),
-          label: const Text(
-            'Add Candidates',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 15.0,
-              color: Colors.white,
-            ),
-          ),
-          onPressed: (){
-             Navigator.push(
-                                  context, MaterialPageRoute(builder: (_) => AddCandidatePage()));
-          },
-            )
-          ),
-         Padding(padding: EdgeInsets.only(right: 100.0)),
+        
              ],
            ),
            SizedBox(height: 20.0),
@@ -128,10 +92,10 @@ class CandidateList extends StatefulWidget {
 class _CandidateListState extends State<CandidateList> {
   // Generate a list of fiction prodcts
   final List<Map<String, dynamic>> _allCandidates = [
-     {"position": "President", "name": "Floriane Mae Recto", "partylist": "TINGOG", "gradeLevel": " 12 - STEM", "email": "flor@unc.edu.ph", "status": "Verified"},
-     {"position": "President", "name": "Brian Macatangay", "partylist": "PADAYON", "gradeLevel": " 12 - ABM", "email": "brian@unc.edu.ph", "status": "Verified"},
-     {"position": "Vice President", "name": "Razyl Abbygail Vidal", "partylist": "PADAYON", "gradeLevel": " 12 - GAS", "email": "razyl@unc.edu.ph", "status": "Verified"},
-     {"position": "Vice President", "name": "Michael Jude Jacinto", "partylist": "TINGOG", "gradeLevel": " 12 - TVL", "email": "ong@unc.edu.ph", "status": "Verified"}
+     {"position": "President", "name": "Floriane Mae Recto", "partylist": "TINGOG", "gradeLevel": " 12 - STEM", "email": "flor@unc.edu.ph", "status": "Approve"},
+     {"position": "President", "name": "Brian Macatangay", "partylist": "PADAYON", "gradeLevel": " 12 - ABM", "email": "brian@unc.edu.ph", "status": "Approve"},
+     {"position": "Vice President", "name": "Razyl Abbygail Vidal", "partylist": "PADAYON", "gradeLevel": " 12 - GAS", "email": "razyl@unc.edu.ph", "status": "Approve"},
+     {"position": "Vice President", "name": "Michael Jude Jacinto", "partylist": "TINGOG", "gradeLevel": " 12 - TVL", "email": "ong@unc.edu.ph", "status": "Approve"}
   ];
 
 
@@ -165,8 +129,29 @@ class _CandidateListState extends State<CandidateList> {
                   DataCell(Text(item['partylist'].toString())),
                    DataCell(Text(item['gradeLevel'].toString())),
                     DataCell(Text(item['email'].toString())),
-                     DataCell(Text(item['status'].toString(),)),
-                    
+                     DataCell(Container(
+                       width: 80.0,
+                       height: 25.0,
+                      
+                       decoration: BoxDecoration(
+                          color: Colors.blue,
+                          
+                          borderRadius: BorderRadius.circular(20), 
+
+                       ),
+                       child: FlatButton(
+                         onPressed: (){}, 
+                         child: Text(item['status'].toString(),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white
+                          ),
+                         )
+                         ),
+                     )
+                     ),
+                     
+                  
                 ],
                 onLongPress: (){
                             Navigator.push(
