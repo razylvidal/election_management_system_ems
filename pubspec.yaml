@@ -68,6 +68,10 @@ flutter:
     - assets/loloBrown.jpg
     - assets/background1.jpg
     - assets/UNCHeaderImg.png
+    - assets/Seal_of_University_of_Nueva_Caceres.png
+    - assets/UNC-Logo.png
+    - assets/unc.jpg
+    - assets/uncImg.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
