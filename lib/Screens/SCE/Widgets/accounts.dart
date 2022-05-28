@@ -29,7 +29,7 @@ class AccountPage extends StatelessWidget {
           Container(
             height: 50.0,
             decoration: BoxDecoration(
-            color: mustard,
+            color: Colors.red,
             borderRadius: BorderRadius.circular(20),
             boxShadow: const [  
               BoxShadow(
@@ -131,7 +131,7 @@ class _AccountListState extends State<AccountList> {
           child: SingleChildScrollView(
             child: DataTable(
               
-              headingRowColor: MaterialStateProperty.all(Colors.amber[200]),
+              headingRowColor: MaterialStateProperty.all(Colors.red[200]),
               columns: [
                 const DataColumn(label: Text('AccountID')),
                 const DataColumn(label: Text('Userame')),

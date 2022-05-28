@@ -11,9 +11,17 @@ class CreateElectionPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
           body: Container(
-            color: darkBlue,
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
+             decoration: BoxDecoration(
+              color: Colors.black,
+              image: DecorationImage(
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.5),BlendMode.dstATop),
+                     image: AssetImage("assets/background1.jpg"),
+                    ),
+                  
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget> [
@@ -25,27 +33,13 @@ class CreateElectionPage extends StatelessWidget {
                   border: Border.all(color: darkBlue, width: 1),  
                   borderRadius: BorderRadius.circular(5), 
                   color: Colors.white,
-                  boxShadow: const [  
-                        BoxShadow(
-                        color: Colors.black87,
-                        offset: Offset(4.0, 4.0),
-                        blurRadius: 10.0,
-                      ), 
-                  ]
+                 
                   ),
                   child: Row(
                     children: [
                        Container(
                             decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment.bottomRight,
-                              colors: [
-                                Color(0xFF293045),
-                                Color(0xFF4A6488),
-                                Color(0xFF223C5B),
-                              ] 
-                              )
+                            color: Colors.black87
 
                           ),
                         child: SizedBox(
@@ -63,7 +57,7 @@ class CreateElectionPage extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 20.0,
                                   fontWeight: FontWeight.bold,
-                                  color: blue,
+                                  
                                 ),
                                 child: Text('Welcome to Election Management System'),
                               ),
@@ -181,30 +175,34 @@ class CreateElectionPage extends StatelessWidget {
                                    children: [
                                  Expanded(flex: 3,child: SizedBox(width: 80.0,)),
                                  Expanded(
-                                   child: TextButton.icon(
+                                   child: Container(
+                                     width: 100.0,
+                                     height: 30.0,
+                                     decoration: BoxDecoration(
+                                       color: Colors.red,
+                                       borderRadius: BorderRadius.circular(20.0),
+                                     ),
+                                     child: TextButton(
                                     onPressed: (){
                                       Navigator.push(
                                   context, MaterialPageRoute(builder: (_) => SideMenu()));
                                     },  
-                                    label: Text(
+                                    child: Text(
                                       'Next',
-                                    style: TextStyle(
-                                      fontSize: 17.0,
+                                      style: TextStyle(
+                                      fontSize: 15.0,
                                       fontWeight: FontWeight.w900,
-                                      color: mustard
+                                      color: Colors.white
                                       
                                     ),
                                     ),
-                                    icon: Icon(Icons.last_page, color: mustard,),
-                                   )
-                                   )
-                                   ]
-                                 )
                                    
-
-
-
-                              
+                                   )
+                                   )
+                                 )
+                                   ]
+                                 
+                                 )
                             ],
                           ),
                         )

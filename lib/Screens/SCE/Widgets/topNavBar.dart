@@ -5,31 +5,28 @@ import 'package:flutter/material.dart';
 
 AppBar TopNavBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
  AppBar(
-       backgroundColor:darkBlue,
+       backgroundColor: Color(0xFF232323),
           shadowColor: Colors.grey,
-          leadingWidth: 250,
+          leadingWidth: 300,
           toolbarHeight: 100,
           elevation: 5,
       leading: Row(
-        children: [
-          Padding(
-            padding: EdgeInsets.only(left: 20.0, right: 50.0),
-            child: InkWell(
+        children: [InkWell(
               onTap: () {
                Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
               }, // Image tapped
               splashColor: Colors.white10, // Splash color over image
               child: Ink.image(
                 //fit: BoxFit.cover, // Fixes border issues
-                width: 150,
-                height: 130,
+                width: 300,
+                height: 200,
                 image: AssetImage(
-                  'assets/emsLogo.png',
+                  'assets/UNCHeaderImg.png',
                   
                 ),
               ),
             ),
-          ),
+        
       ]
       ),
       actions: <Widget>[
@@ -39,7 +36,7 @@ AppBar TopNavBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
                     context, MaterialPageRoute(builder: (_) => LoginPage()));
 
             },
-            icon:   Icon(Icons.exit_to_app, color: mustard,),
+            icon:   Icon(Icons.exit_to_app, color: Colors.red,),
             label: Text(
               'Sign Out',
               style: TextStyle(

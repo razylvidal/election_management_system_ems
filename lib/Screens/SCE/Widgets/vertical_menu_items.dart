@@ -47,7 +47,7 @@ class VertticalMenuItem extends StatelessWidget {
                     child: Container(
                       width: 3,
                       height: 72,
-                      color: mustard,
+                      color: Colors.red,
                     ),
                   ),
                   Expanded(

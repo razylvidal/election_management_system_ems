@@ -11,27 +11,24 @@ class LoginPage extends StatelessWidget {
     
     return Scaffold(
       
-        body: SingleChildScrollView(
-          child: Container(
+        body: Container(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            //color: darkBlue,
-         /* decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  darkBlue, blue2, darkBlue
-                ] 
-                )
-
-            ),*/
-            color: darkBlue,
+        
+            decoration: BoxDecoration(
+              color: Colors.black,
+              image: DecorationImage(
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.5),BlendMode.dstATop),
+                     image: AssetImage("assets/loloBrown.jpg"),
+                    ),
+                  
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget> [
                 Padding(
-                  padding: EdgeInsets.only(top: 25.0, bottom: 20.0),
+                  padding: EdgeInsets.only(top: 50.0, bottom: 10.0),
                   child: SizedBox(
                     width: 300,
                     height: 160,
@@ -43,30 +40,12 @@ class LoginPage extends StatelessWidget {
                 Container(
                   height: 407,
                   width: 600,
-                 decoration: BoxDecoration(
-                  /*gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  darkBlue, blue2,blue3,blue2, darkBlue
-                ] 
-                ),  */
-                color: Colors.blueGrey,
-                  border: Border.all(color: Colors.black, width: 1),  
-                  borderRadius: BorderRadius.circular(10), 
-                  /*boxShadow: const [  
-                        BoxShadow(
-                        color: Colors.black12,
-                        offset: Offset(6.0, 6.0),
-                        blurRadius: 5.0,
-                      ), 
-                  ]*/
-                  ),
+                
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SizedBox(height: 35),
-                      Text(
+                      SizedBox(height: 10),
+                      const Text(
                         'Please provide the following details to continue',
                         style: TextStyle(
                           fontSize: 15,
@@ -76,42 +55,49 @@ class LoginPage extends StatelessWidget {
                       ),
                      
                       //dropdown box for user type
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(top: 15.0, bottom: 10.0),
                         child: _User()
                       ),
                       //radio button for depertment
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(left: 100.0, bottom: 10.0, right: 100.0),
                         child: _Department(),
                       ),
                       //input field for username
                       Padding(
-                        padding: EdgeInsets.only(bottom: 10.0, left: 100.0 , right: 100.0),
-                        child: TextField(
+                        padding: const EdgeInsets.only(bottom: 10.0, left: 100.0 , right: 100.0),
+                        child: Container(
+                          width: 250.0,
+                          height: 45.0,
+                          child: TextField(
                                 decoration: InputDecoration(
                                   prefixText: '   ',
-                                  suffixIcon: Icon(Icons.person),
+                                  suffixIcon: const Icon(Icons.person),
                                     enabledBorder: OutlineInputBorder(
 
-                                      borderSide: BorderSide(color: Colors.grey, width: 2),
-                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: const BorderSide(color: Colors.grey, width: 1),
+                                      borderRadius: BorderRadius.circular(20),
                                     ),
                                     border: OutlineInputBorder(
-                                      borderSide: BorderSide(color: Colors.grey, width: 2),
-                                      borderRadius: BorderRadius.circular(10),
+                                      borderSide: const BorderSide(color: Colors.grey, width: 1),
+                                      borderRadius: BorderRadius.circular(20),
                                     ),
                                     filled: true,
                                     fillColor: Colors.grey[350],
                                     hintText: 'Username',
                                   ),
                                 )
+                        )
                       
                                 ),
                       
                        //input field for password
                       Padding(
                         padding: EdgeInsets.only(top: 5.0, bottom: 20.0, left: 100.0 , right: 100.0),
+                        child: Container(
+                           width: 250.0,
+                          height: 45.0,
                         child: TextField(
                           obscureText: true,
                           decoration: InputDecoration(
@@ -123,15 +109,16 @@ class LoginPage extends StatelessWidget {
                             enabledBorder: OutlineInputBorder(
 
                               borderSide: BorderSide(color: Colors.grey, width: 2),
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(20),
                             ),
                             border: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.grey, width: 2),
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(20),
                             ),
                             filled: true,
                             fillColor: Colors.grey[350],
                             hintText: 'Password'),
+                        )
                         )
                       ),
                      
@@ -139,10 +126,10 @@ class LoginPage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(bottom: 10.0),
                         child:Container(
-                          height: 40,
-                          width: 150,
+                          height: 30,
+                          width: 100,
                           decoration: BoxDecoration(
-                              color: mustard,
+                              color: Colors.red,
                               borderRadius: BorderRadius.circular(20),
                                 boxShadow: const [  
                                   BoxShadow(
@@ -196,8 +183,6 @@ class LoginPage extends StatelessWidget {
 
 
           )
-        ,),
-     
     );
   }
 }
@@ -222,17 +207,22 @@ class __UserState extends State<_User> {
           children: [
             Padding(
               padding: EdgeInsets.only(right: 100.0, left: 100.0),
-              child: DropdownButtonFormField(
+              child: Container(
+                width: 250.0,
+                height: 49.0,
+                child: DropdownButtonFormField(
+                  style: TextStyle(
+                    fontSize: 15.0
+                  ),
                 decoration: InputDecoration(
                   //prefixIcon: Icon(Icons.supervised_user_circle),
                   enabledBorder: OutlineInputBorder(
-
-                    borderSide: BorderSide(color: Colors.grey, width: 2),
-                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.grey, width: 1),
+                    borderRadius: BorderRadius.circular(20),
                   ),
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.grey, width: 2),
-                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.grey, width: 1),
+                    borderRadius: BorderRadius.circular(20),
                   ),
                   filled: true,
                   fillColor: Colors.grey[350],
@@ -273,7 +263,9 @@ class __UserState extends State<_User> {
                     ),
                     value: 'Campaign Manager',
                     )
+              
                 ]),
+            )
             )
           ],
         )
@@ -302,6 +294,7 @@ class __DepartmentState extends State<_Department> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Radio(
+               fillColor: MaterialStateColor.resolveWith((states) => Colors.white),
               value: 1,
               groupValue: id,
               onChanged: (val) {
@@ -310,7 +303,8 @@ class __DepartmentState extends State<_Department> {
                   id = 1;
                 });
               },
-              activeColor: mustard,
+              activeColor: Colors.white,
+              
             ),
             Text(
               'JHS',
@@ -323,6 +317,7 @@ class __DepartmentState extends State<_Department> {
             SizedBox(width: 70.0,),
  
             Radio(
+              fillColor: MaterialStateColor.resolveWith((states) => Colors.white),
               value: 2,
               groupValue: id,
               onChanged: (val) {
@@ -331,7 +326,7 @@ class __DepartmentState extends State<_Department> {
                   id = 2;
                 });
               },
-              activeColor: mustard,
+              activeColor: Colors.white,
             ),
             Text(
               'SHS',

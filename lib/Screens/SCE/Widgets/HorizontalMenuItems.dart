@@ -44,7 +44,7 @@ class HorizontalMenuItems extends StatelessWidget {
                           child: Container(
                             width: 6,
                             height: 40,
-                            color: mustard,
+                            color: Colors.red,
                           ),
                         ),
                        SizedBox(width:_width / 88),

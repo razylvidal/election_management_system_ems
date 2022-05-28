@@ -21,7 +21,6 @@ class VoterPage extends StatelessWidget {
                style: TextStyle(
                  fontWeight: FontWeight.bold,
                  fontSize: 30.0,
-                 color: blue,
                ),
              ),
              ] 
@@ -43,7 +42,7 @@ class VoterPage extends StatelessWidget {
           Container(
             height: 40.0,
             decoration: BoxDecoration(
-            color: mustard,
+            color: Colors.red,
             borderRadius: BorderRadius.circular(20),
             boxShadow: const [  
               BoxShadow(
@@ -146,7 +145,7 @@ class _VoterListState extends State<VoterList> {
           child: SingleChildScrollView(
             child: DataTable(
               
-              headingRowColor: MaterialStateProperty.all(Colors.amber[200]),
+              headingRowColor: MaterialStateProperty.all(Colors.red[200]),
               columns: [
                 const DataColumn(label: Text('VoterID')),
                 const DataColumn(label: Text('Name')),
