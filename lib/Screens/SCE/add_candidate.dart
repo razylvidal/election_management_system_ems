@@ -112,7 +112,7 @@ class _CandidateListState extends State<CandidateList> {
           child: SingleChildScrollView(
             child: DataTable(
               
-              headingRowColor: MaterialStateProperty.all(Colors.amber[200]),
+              headingRowColor: MaterialStateProperty.all(Colors.red[200]),
               columns: [
                 const DataColumn(label: Text('Position')),
                 const DataColumn(label: Text('Name')),
@@ -134,7 +134,7 @@ class _CandidateListState extends State<CandidateList> {
                        height: 25.0,
                       
                        decoration: BoxDecoration(
-                          color: Colors.blue,
+                          color: Colors.red,
                           
                           borderRadius: BorderRadius.circular(20), 
 

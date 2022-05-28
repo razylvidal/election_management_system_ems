@@ -8,3 +8,4 @@ Color blue2 = Color(0xFF04396C);
 Color blue3 = Color(0xFF035B96);
 Color blue4 = Color(0xFF6497B1);
 Color blue5 = Color(0xFFB3CDE0);
+Color grey = Color(0xFF3D3D3D);

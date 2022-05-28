@@ -3,6 +3,7 @@ import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/SCE/Routing/routes.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/sideMenuItems.dart';
 import 'package:election_management_system_ems/Screens/SCE/electionPage.dart';
+import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
 import 'package:flutter/material.dart';
 
 class MenuItems extends StatelessWidget {
@@ -12,54 +13,28 @@ class MenuItems extends StatelessWidget {
   Widget build(BuildContext context) {
     double _width = MediaQuery.of(context).size.width;
     return Container(
+      color: Colors.black87,
 
-      color: darkBlue,
-      child: ListView (children: [
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [ 
-            Row(
-              children: [
-                /*SizedBox(
-                  width: _width / 48,
-                ),*/
-               
-                /*Flexible(child: CustomText(
-                  text: 'Dashboard',
-                  size: 20,
-                  weight: FontWeight.bold,
-                  color: Colors.black,
-                  )
-                ),*/
+      child: ListView (
+        children: [
+        SizedBox(height: 10.0,),
+        SizedBox(
+                width: 200,
+                height: 100,
+                child: Image.asset(
+                  'assets/emsLogo.png',
+                  
+                ),
 
-               // SizedBox(width: _width / 48,),
-              ],
-            ),
-            
-        
-          ]
-        ),
-        //SizedBox(height: 40,),
-            Divider(color: mustard.withOpacity(.1),),
+                  ),
+                
+            SizedBox(height: 15.0,),
             Column(
               mainAxisSize: MainAxisSize.min,
-              children:
+              children: 
+              
                 sideMenuItems.map((itemName) => SideMenuItem(
                   itemName: itemName == ElectionPage ? 'Election' : itemName,
-
-                 /* onTap: (){
-                    if(itemName == AuthenticationPageRoute){
-                      //TODO:: go to authentication page
-                    }
-
-                    if(!menuController.isActive(itemName)){
-                      menuController.changeActiveitemTo(itemName);
-                      if(ResponsiveWidget.isSmallScreen(context))
-                      Get.back();
-                      navigationController.navigateTo(itemName);
-                    }
-                  }, */
-                  
                   )
                 ).toList(),
 

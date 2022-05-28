@@ -97,7 +97,7 @@ class _DashboardPageState extends State<DashboardPage> {
                Container(
                           height: 50.0,
                           decoration: BoxDecoration(
-                              color: mustard,
+                              color: Colors.red,
                               borderRadius: BorderRadius.circular(20),
                                 boxShadow: const [  
                                   BoxShadow(
@@ -140,7 +140,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       itemCount: _foundUsers.length,
                       itemBuilder: (context, index) => Card(
                         key: ValueKey(_foundUsers[index]["id"]),
-                        color: Colors.blueGrey,
+                        color: Colors.grey[400],
                         elevation: 5,
                         margin: const EdgeInsets.symmetric(vertical: 10),
                         child: ListTile(
@@ -158,7 +158,9 @@ class _DashboardPageState extends State<DashboardPage> {
                             ),
                             ),
                           subtitle: Text(
-                              '${_foundUsers[index]["status"].toString()}'),
+                              '${_foundUsers[index]["status"].toString()}',
+                              style: TextStyle(
+                                      color: grey),),
                         ),
                       ),
                     )

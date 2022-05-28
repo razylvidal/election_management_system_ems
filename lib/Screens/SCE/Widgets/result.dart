@@ -1,3 +1,4 @@
+import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
@@ -6,8 +7,9 @@ class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50.0,
-      width: 300,
+      height: MediaQuery.of(context).size.height,
+       width: MediaQuery.of(context).size.width,
+       color: grey,
       child: Text('result page'),
     );
   }

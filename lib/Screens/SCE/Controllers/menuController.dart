@@ -43,9 +43,9 @@ class MenuController extends GetxController{
     if(isActive(itemName)) 
       return Icon(icon, 
       size: 25, 
-      color: mustard);
+      color: Colors.red);
 
-      return Icon(icon, color: isHovering(itemName) ? mustard : Colors.grey, size: 22,);
+      return Icon(icon, color: isHovering(itemName) ? Colors.red : Colors.grey, size: 22,);
   }
 
 }

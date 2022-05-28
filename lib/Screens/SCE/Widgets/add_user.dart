@@ -172,7 +172,7 @@ class AddUser extends StatelessWidget {
                           height: 40,
                           width: 150,
                           decoration: BoxDecoration(
-                              color: mustard,
+                              color: Colors.red,
                               borderRadius: BorderRadius.circular(20),
                                 boxShadow: const [  
                                   BoxShadow(

@@ -18,7 +18,6 @@ class ElectionPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 30.0,
                   fontWeight: FontWeight.bold,
-                  color: blue
                 ), 
                 child: Text('Election Title')
               ),
@@ -179,9 +178,9 @@ class ElectionPage extends StatelessWidget {
                   children: [
                               const Padding(padding: EdgeInsets.only( left: 200.0)),
                               Container(
-                            height: 50.0,
+                            height: 40.0,
                             decoration: BoxDecoration(
-                            color: mustard,
+                            color: Colors.blue,
                             borderRadius: BorderRadius.circular(20),
                             boxShadow: const [  
                               BoxShadow(
@@ -207,7 +206,7 @@ class ElectionPage extends StatelessWidget {
                           ),
                           Padding(padding: EdgeInsets.only(top: 100.0, left: 50.0)),
                           Container(
-                            height: 50.0,
+                            height: 40.0,
                             decoration: BoxDecoration(
                             color: Colors.red,
                             borderRadius: BorderRadius.circular(20),
@@ -250,7 +249,7 @@ class ElectionPage extends StatelessWidget {
                     width: 300.0,
                     decoration: BoxDecoration(  
                       borderRadius: BorderRadius.circular(10), 
-                      color: mustard,
+                      color: Colors.red,
                        boxShadow: const [  
                         BoxShadow(
                         color: Colors.grey,
@@ -274,7 +273,7 @@ class ElectionPage extends StatelessWidget {
                     width: 300.0,
                     decoration: BoxDecoration(  
                       borderRadius: BorderRadius.circular(10), 
-                      color: mustard,
+                      color: Colors.red,
                        boxShadow: const [  
                         BoxShadow(
                         color: Colors.grey,
@@ -299,7 +298,7 @@ class ElectionPage extends StatelessWidget {
                     width: 300.0,
                     decoration: BoxDecoration(  
                       borderRadius: BorderRadius.circular(10), 
-                      color: mustard,
+                      color: Colors.red,
                        boxShadow: const [  
                         BoxShadow(
                         color: Colors.grey,
