@@ -144,7 +144,7 @@ class _CandidateListState extends State<CandidateList> {
   Widget build(BuildContext context) {
     return SizedBox(
           width: double.infinity,
-          child: SingleChildScrollView(
+          child: Container(
             child: DataTable(
               
               headingRowColor: MaterialStateProperty.all(Colors.red[200]),
@@ -158,7 +158,8 @@ class _CandidateListState extends State<CandidateList> {
                
               ],
               rows: _allCandidates.map((item) {
-                return DataRow(cells: [
+                return DataRow(
+                  cells: [
                   DataCell(Text(item['position'].toString())),
                   DataCell(Text(item['name'])),
                   DataCell(Text(item['partylist'].toString())),

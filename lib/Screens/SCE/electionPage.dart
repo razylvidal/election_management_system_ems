@@ -13,7 +13,7 @@ class ElectionPage extends StatelessWidget {
         children: [
           Row(
           children: [
-            const Padding(padding: EdgeInsets.only(top:85.0, left: 40.0)),
+            const Padding(padding: EdgeInsets.only(top:85.0, left: 50.0)),
             DefaultTextStyle(
                 style: TextStyle(
                   fontSize: 30.0,
@@ -27,9 +27,7 @@ class ElectionPage extends StatelessWidget {
         //election details
         Row(
           children: [
-            Container(
-              height: 450.0,
-              width: 590.0,
+            SingleChildScrollView(
               child: Column(
               children: [
                 SizedBox(height:30.0),

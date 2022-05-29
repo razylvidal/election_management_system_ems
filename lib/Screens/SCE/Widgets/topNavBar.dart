@@ -11,17 +11,19 @@ AppBar TopNavBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
           toolbarHeight: 100,
           elevation: 5,
       leading: Row(
-        children: [InkWell(
+        children: [
+          Padding(padding: EdgeInsets.only(left: 20.0)),
+          InkWell(
               onTap: () {
                Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
               }, // Image tapped
               splashColor: Colors.white10, // Splash color over image
               child: Ink.image(
                 //fit: BoxFit.cover, // Fixes border issues
-                width: 300,
-                height: 200,
+                width: 250,
+                //height: 100,
                 image: AssetImage(
-                  'assets/UNCHeaderImg.png',
+                  'assets/UNC-Logo.png',
                   
                 ),
               ),
@@ -29,6 +31,7 @@ AppBar TopNavBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
         
       ]
       ),
+      //title: SizedBox(height: 180, width: 100,child: Image.asset('assets/Seal_of_University_of_Nueva_Caceres.png', ),),
       actions: <Widget>[
         TextButton.icon(
             onPressed: () {

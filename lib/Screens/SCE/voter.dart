@@ -40,7 +40,8 @@ class VoterPage extends StatelessWidget {
           
           Space(),
           Container(
-            height: 40.0,
+            height: 50.0,
+            width: 150,
             decoration: BoxDecoration(
             color: Colors.red,
             borderRadius: BorderRadius.circular(20),
@@ -60,7 +61,7 @@ class VoterPage extends StatelessWidget {
 
             ),
           label: const Text(
-            'Import',
+            'Import File',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 15.0,
@@ -72,13 +73,13 @@ class VoterPage extends StatelessWidget {
           },
             )
           ),
-         Padding(padding: EdgeInsets.only(right: 170.0)),
+         Padding(padding: EdgeInsets.only(right: 100.0)),
              ],
            ),
            SizedBox(height: 20.0),
            Container(
              height: 350.0,
-            child: SingleChildScrollView(
+            child: Container(
              child:  Padding(padding: EdgeInsets.only(left: 50.0,  right: 100.0),
               child: VoterList(),
            )

@@ -6,6 +6,7 @@ import 'package:election_management_system_ems/Screens/SCE/Widgets/create_electi
 import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
 import 'package:election_management_system_ems/Screens/SCE/menu.dart';
 import 'package:election_management_system_ems/Screens/SCE/electionPage.dart';
+import 'package:election_management_system_ems/Screens/Voters/instruction.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner:false,
       title: 'Election Management System',
-      home: CreateElectionPage()
+      home: LoginPage()
 
     );
   }
