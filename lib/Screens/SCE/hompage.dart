@@ -15,7 +15,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: TopNavBar(context, scaffoldKey),
-    body: DashboardPage(),
+    body: Center(
+        child: DashboardPage(),
+    )
     
     );
   }
@@ -34,6 +36,11 @@ class _DashboardPageState extends State<DashboardPage> {
   final List<Map<String, dynamic>> _allUsers = [
     {"id": 1, "name": "SSG Election 2022", "status": "Ongoing", "start": "01/02/2022, 3:00PM", "end": "01/07/2022, 3:00PM"},
     {"id": 2, "name": "SSG Election 2021", "status": "Completed", "start": "01/02/2022, 3:00PM", "end": "01/07/2022, 3:00PM"},
+    {"id": 3, "name": "SSG Election 2020", "status": "Completed", "start": "01/02/2022, 3:00PM", "end": "01/07/2022, 3:00PM"},
+    {"id": 3, "name": "SSG Election 2020", "status": "Completed", "start": "01/02/2022, 3:00PM", "end": "01/07/2022, 3:00PM"},
+    {"id": 3, "name": "SSG Election 2020", "status": "Completed", "start": "01/02/2022, 3:00PM", "end": "01/07/2022, 3:00PM"},
+    {"id": 3, "name": "SSG Election 2020", "status": "Completed", "start": "01/02/2022, 3:00PM", "end": "01/07/2022, 3:00PM"},
+    {"id": 3, "name": "SSG Election 2020", "status": "Completed", "start": "01/02/2022, 3:00PM", "end": "01/07/2022, 3:00PM"},
     {"id": 3, "name": "SSG Election 2020", "status": "Completed", "start": "01/02/2022, 3:00PM", "end": "01/07/2022, 3:00PM"},
    
   ];
@@ -70,9 +77,9 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      width: MediaQuery.of(context).size.width,
+      width: 700,
      child: Padding(
-        padding: const EdgeInsets.only(top:10.0, left: 300.0, right: 300.0),
+        padding: const EdgeInsets.only(top:10.0,),
         child: Column(
           children: [
             const SizedBox(
@@ -134,7 +141,10 @@ class _DashboardPageState extends State<DashboardPage> {
             const SizedBox(
               height: 20,
             ),
-            Expanded(
+            SingleChildScrollView(
+            child: Container(
+              width: 700,
+              height: 400,
               child: _foundUsers.isNotEmpty
                   ? ListView.builder(
                       itemCount: _foundUsers.length,
@@ -169,8 +179,10 @@ class _DashboardPageState extends State<DashboardPage> {
                       style: TextStyle(
                         fontSize: 24),
                     ),
+              )
             ),
           ],
+          
         )
       )
     );

@@ -31,7 +31,7 @@ class CreateElectionPage extends StatelessWidget {
                   width: 700,
                   decoration: BoxDecoration(  
                   border: Border.all(color: darkBlue, width: 1),  
-                  borderRadius: BorderRadius.circular(5), 
+                  borderRadius: BorderRadius.circular(25), 
                   color: Colors.white,
                  
                   ),
@@ -39,7 +39,9 @@ class CreateElectionPage extends StatelessWidget {
                     children: [
                        Container(
                             decoration: BoxDecoration(
-                            color: Colors.black87
+                            color: Colors.black87,
+                              borderRadius: BorderRadius.only(topLeft: Radius.circular(23.5),bottomLeft: Radius.circular(23.5),)
+                            
 
                           ),
                         child: SizedBox(

@@ -32,9 +32,9 @@ class InstructionPage extends StatelessWidget {
                   height: 400,
                   width: 700,
                   decoration: BoxDecoration(  
-                  border: Border.all(color: Colors.black, width: 1),  
-                  borderRadius: BorderRadius.circular(25), 
-                  color: Colors.white,
+                      border: Border.all(color: Colors.black, width: 1),  
+                      borderRadius: BorderRadius.circular(25), 
+                      color: Colors.white,
                  
                   ),
                   child: Row(

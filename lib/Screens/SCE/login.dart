@@ -1,5 +1,6 @@
 import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
+import 'package:election_management_system_ems/Screens/Voters/instruction.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -162,7 +163,10 @@ class LoginPage extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(bottom: 5.0),
                         child: TextButton.icon(
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(
+                                  context, MaterialPageRoute(builder: (_) => InstructionPage()));
+                        },
                         icon: Icon(Icons.info_outlined, size: 15.0, color: Colors.white,),
                         label: Text(
                           'Forgot Password?',
