@@ -17,7 +17,7 @@ class VoterPage extends StatelessWidget {
              children: [
                 Padding(padding: EdgeInsets.only(left: 50.0)),
                 Text(
-               'Election Title',
+               'SSG Election 2022',
                style: TextStyle(
                  fontWeight: FontWeight.bold,
                  fontSize: 30.0,

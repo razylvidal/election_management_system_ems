@@ -18,7 +18,7 @@ class AddCandidatePage extends StatelessWidget {
              children: [
                 Padding(padding: EdgeInsets.only(left: 50.0)),
                 Text(
-               'Election Title',
+               'SSG Election 2022',
                style: TextStyle(
                  fontWeight: FontWeight.bold,
                  fontSize: 30.0,
@@ -47,14 +47,29 @@ class AddCandidatePage extends StatelessWidget {
              ],
            ),
            SizedBox(height: 20.0),
-           Container(
-             height: 350.0,
-            child: SingleChildScrollView(
-             child:  Padding(padding: EdgeInsets.only(left: 50.0,  right: 100.0),
-              child: CandidateList(),
-           )
-           )
-           )
+           CandidateList(),
+           SizedBox(height: 20,),
+            Row(
+          children: [
+            Padding(padding: EdgeInsets.only(left: 50)),
+            Container(
+            width: 100,
+            height: 40.0,
+            decoration: BoxDecoration(
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            // ignore: deprecated_member_use
+            child: FlatButton.icon(
+              onPressed: (){
+                 Navigator.pop(context);
+              }, 
+              icon: Icon(Icons.chevron_left_rounded, color: Colors.white,), 
+              label: Text('Back',
+                style: TextStyle(color: Colors.white, fontSize: 15, fontWeight: FontWeight.bold))),
+          ),
+          ]
+          ),
          ],
        ),
 
@@ -107,11 +122,12 @@ class _CandidateListState extends State<CandidateList> {
     super.initState();
   }
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Padding(padding: EdgeInsets.only(left: 50, right: 50,),
+      child: SizedBox(
           width: double.infinity,
+            height: 310,
           child: SingleChildScrollView(
             child: DataTable(
-              
               headingRowColor: MaterialStateProperty.all(Colors.red[200]),
               columns: [
                 const DataColumn(label: Text('Position')),
@@ -162,6 +178,7 @@ class _CandidateListState extends State<CandidateList> {
               }).toList(),
             ),
           ),
+      )
         );
   }
 }
