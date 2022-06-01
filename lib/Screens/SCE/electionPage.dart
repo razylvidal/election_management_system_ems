@@ -1,6 +1,7 @@
 import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/result.dart';
 import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
+import 'package:election_management_system_ems/Screens/SCE/shs_result.dart';
 import 'package:flutter/material.dart';
 
 class ElectionPage extends StatelessWidget {
@@ -8,7 +9,7 @@ class ElectionPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Container(
       child: Column(
         children: [
           Row(
@@ -19,7 +20,7 @@ class ElectionPage extends StatelessWidget {
                   fontSize: 30.0,
                   fontWeight: FontWeight.bold,
                 ), 
-                child: Text('Election Title')
+                child: Text('SSG Election 2022')
               ),
             
           ]
@@ -27,10 +28,10 @@ class ElectionPage extends StatelessWidget {
         //election details
         Row(
           children: [
-            SingleChildScrollView(
+            Container(
               child: Column(
               children: [
-                SizedBox(height:30.0),
+                SizedBox(height:20.0),
                 Row(
                   children: [
                     Padding(padding: EdgeInsets.only(left: 50.0)),
@@ -41,7 +42,7 @@ class ElectionPage extends StatelessWidget {
                       fontWeight: FontWeight.bold
                     ),
                     ),
-                    Padding(padding: EdgeInsets.only(left: 20.0,  top: 60.0)),
+                    Padding(padding: EdgeInsets.only(left: 20.0)),
                     Container(
                       width: 350.0,
                       height: 45.0,
@@ -102,7 +103,7 @@ class ElectionPage extends StatelessWidget {
                 ),
                  Row(
                   children: [
-                    Padding(padding: EdgeInsets.only(left: 50.0, top: 60.0)),
+                    Padding(padding: EdgeInsets.only(left: 50.0, top: 55.0)),
                     const Text(
                       'End Date: ',
                     style: TextStyle(
@@ -110,7 +111,7 @@ class ElectionPage extends StatelessWidget {
                       fontWeight: FontWeight.bold
                     ),
                     ),
-                    Padding(padding: EdgeInsets.only(left: 68.0 , top: 60.0)),
+                    Padding(padding: EdgeInsets.only(left: 68.0 , top: 55.0)),
                     Container(
                       width: 350.0,
                       height: 45.0,
@@ -138,7 +139,7 @@ class ElectionPage extends StatelessWidget {
                 ),
                  Row(
                   children: [
-                    const Padding(padding: EdgeInsets.only(left: 50.0, top: 60.0)),
+                    const Padding(padding: EdgeInsets.only(left: 50.0, top: 55.0)),
                     const Text(
                       'Timezone: ',
                     style: TextStyle(
@@ -146,7 +147,7 @@ class ElectionPage extends StatelessWidget {
                       fontWeight: FontWeight.bold
                     ),
                     ),
-                    const Padding(padding: EdgeInsets.only(left: 59.0 , top: 60.0)),
+                    const Padding(padding: EdgeInsets.only(left: 59.0 , top: 55.0)),
                     Container(
                       width: 350.0,
                       height: 45.0,
@@ -238,7 +239,7 @@ class ElectionPage extends StatelessWidget {
             //right side containers and button
             Padding(padding: EdgeInsets.only(left: 80.0)),
             Container(
-              height: 480.0,
+              height: 450.0,
               width: 300.0,
               child: Column(
                 children: [
@@ -308,7 +309,7 @@ class ElectionPage extends StatelessWidget {
                     child: FlatButton.icon(
                       onPressed: (){
                          Navigator.push(
-                                  context, MaterialPageRoute(builder: (_) => ResultPage()));
+                                  context, MaterialPageRoute(builder: (_) => ShsResult()));
                       }, 
                       icon: Icon(Icons.list, size: 40.0,color: Colors.white,), 
                       label: Text('        View Result',style: TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold),)),

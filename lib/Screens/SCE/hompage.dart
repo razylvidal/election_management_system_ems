@@ -3,6 +3,7 @@
 import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/SCE/Helpers/responsiveness.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/create_election.dart';
+import 'package:election_management_system_ems/Screens/SCE/Widgets/result.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/topNavBar.dart';
 import 'package:election_management_system_ems/Screens/SCE/login.dart';
 import 'package:flutter/material.dart';
@@ -155,7 +156,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         margin: const EdgeInsets.symmetric(vertical: 10),
                         child: ListTile(
                           onTap: (){
-                            
+                             Navigator.push(context, MaterialPageRoute(builder: (_) => ResultPage()));
                           },
                           leading: Text(
                             _foundUsers[index]["id"].toString(),

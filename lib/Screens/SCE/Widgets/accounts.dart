@@ -11,13 +11,17 @@ class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 40.0),
+        SizedBox(height: 30.0),
+        Padding(padding: EdgeInsets.only(left: 50), 
+        child: Text('SSG Election 2022',style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),)),
+        SizedBox(height: 20.0),
         Row(
         children: [
           Padding(padding: EdgeInsets.only(left: 50)),
-          Expanded(child: 
-          TextField(
+          Expanded(
+            child: TextField(
               decoration: InputDecoration(
                 label: Text('Search'),
                 suffixIcon: Icon(Icons.search),

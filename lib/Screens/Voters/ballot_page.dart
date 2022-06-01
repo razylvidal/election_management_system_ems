@@ -1,7 +1,6 @@
 
 
 import 'dart:ui';
-
 import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/Voters/topBar.dart';
 import 'package:flutter/material.dart';
@@ -17,14 +16,14 @@ class BallotPage extends StatelessWidget {
        body: Container(
          child: Column(
            children: [
-             SizedBox(height: 50.0,),
+             SizedBox(height: 30.0,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
                children: [
                  SizedBox(height: 10,),
                   Container(
                     width: 800,
-                    height: 450,
+                    height: 500,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black, width: 1),  
                       borderRadius: BorderRadius.circular(25), 
@@ -59,8 +58,7 @@ class _PositionState extends State<Position> {
   Widget build(BuildContext context) {
     return Stepper(
         steps:getSteps(),
-        currentStep: currentStep,
-        onStepTapped: (int step)
+        currentStep: currentStep,onStepTapped: (int step)
         {
           setState(() {
             currentStep = step;
@@ -73,7 +71,7 @@ class _PositionState extends State<Position> {
         },
         onStepContinue: ()
         {
-          currentStep < 10 ?
+          currentStep < 8 ?
           setState(() => currentStep += 1): null;
         },
       
@@ -196,6 +194,20 @@ class _PositionState extends State<Position> {
         state: currentStep == 7 ?
         StepState.editing : currentStep < 7 ? StepState.disabled: StepState.complete,
       ),
+      Step(
+        title: new Text("Grade 8 Representative"),
+        content: Column(
+          children: <Widget>[
+            TextInstruction(),
+              SizedBox(height:20),
+            SampleCandidate()
+           
+          ],
+        ),
+        isActive:currentStep >= 8,
+        state: currentStep == 8 ?
+        StepState.editing : currentStep < 8 ? StepState.disabled: StepState.complete,
+      ),
     ];
   }
 }
@@ -302,3 +314,4 @@ class _SampleCandidateState extends State<SampleCandidate> {
     );
   }
 }
+

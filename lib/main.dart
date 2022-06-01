@@ -3,6 +3,7 @@ import 'package:election_management_system_ems/Screens/SCE/Controllers/navigatio
 import 'package:election_management_system_ems/Screens/SCE/Routing/routes.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/add_user.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/create_election.dart';
+import 'package:election_management_system_ems/Screens/SCE/Widgets/result.dart';
 import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
 import 'package:election_management_system_ems/Screens/SCE/menu.dart';
 import 'package:election_management_system_ems/Screens/SCE/electionPage.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner:false,
       title: 'Election Management System',
-      home: LoginPage()
+      home: ResultPage()
 
     );
   }
