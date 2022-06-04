@@ -74,7 +74,7 @@ class _PositionState extends State<Position> {
           currentStep < 8 ?
           setState(() => currentStep += 1): null;
         },
-      
+        
     );
   }
   

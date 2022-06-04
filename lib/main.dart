@@ -1,3 +1,4 @@
+import 'package:election_management_system_ems/Screens/Campaign%20Manager/register_candidate.dart';
 import 'package:election_management_system_ems/Screens/SCE/Controllers/menuController.dart';
 import 'package:election_management_system_ems/Screens/SCE/Controllers/navigation_controller.dart';
 import 'package:election_management_system_ems/Screens/SCE/Routing/routes.dart';
