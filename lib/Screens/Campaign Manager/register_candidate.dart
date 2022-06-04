@@ -1,9 +1,11 @@
 import 'dart:html';
 import 'dart:ui';
+import 'package:election_management_system_ems/Screens/Campaign%20Manager/filePicker.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/topNavBar.dart';
 import 'package:flutter/material.dart';
+import 'package:file_picker/file_picker.dart';
 
 class RegisterCandidatePage extends StatelessWidget {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
@@ -30,10 +32,16 @@ class RegisterCandidatePage extends StatelessWidget {
             ),
             SizedBox(height: 50,),
             Container(
-              width: 190,
+              width: 220,
               height: 25,
              decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),color: Colors.red),
-              child: Text(' Candidate Information', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),),
+              child: Row(children: [
+                Padding(padding: EdgeInsets.only(left: 5)),
+                Icon(Icons.info_rounded, color: Colors.white, size: 20,),
+                Padding(padding: EdgeInsets.only(left: 5)),
+                Text('Candidate Information', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),),
+              ]
+              )
             ), Divider(color: Colors.black,height: 0,),
             SizedBox(height: 30,),
             Row(
@@ -165,16 +173,39 @@ class RegisterCandidatePage extends StatelessWidget {
                 ),
               ]
             ),
-             SizedBox(height: 50,),
-            Container(
-              width: 147,
+             SizedBox(height: 30,),
+             Container(
+              width: 170,
               height: 25,
              decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),color: Colors.red),
-              child: Text('  Profile Picture', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),),
+              child: Row(children: [
+                Padding(padding: EdgeInsets.only(left: 5)),
+                Icon(Icons.person_pin, color: Colors.white, size: 20,),
+                Padding(padding: EdgeInsets.only(left: 5)),
+                Text('Display Profile', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),),
+              ]
+              )
             ), Divider(color: Colors.black,height: 0,),
-            SizedBox(height: 30,),
-        
+            SizedBox(height: 30),
+            ImagePicker(),
 
+
+            SizedBox(height: 50,),
+             Container(
+              width: 150,
+              height: 25,
+             decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),color: Colors.red),
+              child: Row(children: [
+                Padding(padding: EdgeInsets.only(left: 5)),
+                Icon(Icons.list_alt_rounded, color: Colors.white, size: 20,),
+                Padding(padding: EdgeInsets.only(left: 5)),
+                Text('Documents', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),),
+              ]
+              )
+            ), Divider(color: Colors.black,height: 0,),
+            
+        
+            SizedBox(height: 50)
           ]
         )
         )
@@ -489,5 +520,45 @@ class _PartylistState extends State<Partylist> {
           ],
         )
       );
+  }
+}
+
+class ImagePicker extends StatefulWidget {
+  const ImagePicker({ Key? key }) : super(key: key);
+
+  @override
+  State<ImagePicker> createState() => _ImagePickerState();
+}
+
+class _ImagePickerState extends State<ImagePicker> {
+  String fileName = '';
+  @override
+  Widget build(BuildContext context) {
+    var pick = Picker();
+    return Container(
+       alignment: Alignment.topLeft,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+        child:Column(
+          children: [
+              // ignore: deprecated_member_use
+               FlatButton.icon(
+                  onPressed: (){
+                      pick.pickFile().then((value){
+                        setState((){
+                          fileName = value;
+                        });
+                      });
+                  }, 
+                  icon: Icon(Icons.upload_file, color: Colors.black, size: 40,),
+                  label: Text('Upload Picture  ' + fileName,) ),
+              
+
+          ],
+        )
+      );
+               
+              
   }
 }
