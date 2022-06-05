@@ -21,6 +21,7 @@ class Picker {
       image = result.files.single.bytes;
       return result.files.single.name.toString();
     }
+    
 
     return 'No File is Selected';
   }

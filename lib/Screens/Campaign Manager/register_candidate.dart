@@ -1,6 +1,10 @@
 import 'dart:html';
+import 'dart:typed_data';
 import 'dart:ui';
+import 'package:election_management_system_ems/Screens/Campaign%20Manager/drop_file_widget.dart';
+import 'package:election_management_system_ems/Screens/Campaign%20Manager/drop_zone_widget.dart';
 import 'package:election_management_system_ems/Screens/Campaign%20Manager/filePicker.dart';
+import 'package:election_management_system_ems/Screens/Campaign%20Manager/file_data_model.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/topNavBar.dart';
@@ -203,7 +207,7 @@ class RegisterCandidatePage extends StatelessWidget {
               ]
               )
             ), Divider(color: Colors.black,height: 0,),
-            
+            DragAndDrop(),
         
             SizedBox(height: 50)
           ]
@@ -532,9 +536,11 @@ class ImagePicker extends StatefulWidget {
 
 class _ImagePickerState extends State<ImagePicker> {
   String fileName = '';
+  
   @override
   Widget build(BuildContext context) {
     var pick = Picker();
+    List<int> picture = [];
     return Container(
        alignment: Alignment.topLeft,
                 decoration: BoxDecoration(
@@ -542,6 +548,12 @@ class _ImagePickerState extends State<ImagePicker> {
                 ),
         child:Column(
           children: [
+              SizedBox(
+                child: Image.memory(Uint8List.fromList(picture),
+                  fit: BoxFit.fill,height: 200,width: 200),
+              
+              ),
+              Padding(padding: EdgeInsets.only(top:20)),
               // ignore: deprecated_member_use
                FlatButton.icon(
                   onPressed: (){
@@ -553,12 +565,44 @@ class _ImagePickerState extends State<ImagePicker> {
                   }, 
                   icon: Icon(Icons.upload_file, color: Colors.black, size: 40,),
                   label: Text('Upload Picture  ' + fileName,) ),
-              
 
           ],
         )
       );
                
               
+  }
+}
+
+class DragAndDrop extends StatefulWidget {
+  const DragAndDrop({ Key? key }) : super(key: key);
+
+  @override
+  State<DragAndDrop> createState() => _DragAndDropState();
+}
+
+class _DragAndDropState extends State<DragAndDrop> {
+  File_Data_Model? file;
+  @override
+  Widget build(BuildContext context) {
+    return  Container(
+            //alignment: Alignment.center,
+            padding: EdgeInsets.all(15),
+            child: Column(
+              children: <Widget> [
+                DroppedFileWidget(file:file ),
+                SizedBox(height: 30,),
+                Container(
+                  height: 300,
+                  child: DropZoneWidget(
+                    onDroppedFile: (file) => setState(()=> this.file = file) ,
+                  ),
+                ),
+                
+
+              ],
+            )
+      
+    );
   }
 }
