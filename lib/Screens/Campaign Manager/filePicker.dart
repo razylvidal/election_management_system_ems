@@ -21,12 +21,11 @@ class Picker {
       image = result.files.single.bytes;
       return result.files.single.name.toString();
     }
-    
 
     return 'No File is Selected';
   }
 
-  Uint8List getImageBytes() {
-    return image;
+  Future<Uint8List> getImageBytes() async {
+    return await image;
   }
 }
