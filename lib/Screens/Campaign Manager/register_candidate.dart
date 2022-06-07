@@ -603,11 +603,8 @@ class _ImagePickerState extends State<ImagePicker> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        alignment: Alignment.topLeft,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-        ),
+    return Center(
+       
         child: Column(
           children: [
             // ignore: deprecated_member_use
@@ -640,9 +637,8 @@ class _ImagePickerState extends State<ImagePicker> {
                     } else {
                       return Image.memory(
                         Uint8List.fromList(snapshot.data!.cast<int>()),
-                        fit: BoxFit.fill,
-                        height: 200,
-                        width: 200,
+                        fit: BoxFit.cover,
+                        width: 400,
                       );
                     }
                   }
