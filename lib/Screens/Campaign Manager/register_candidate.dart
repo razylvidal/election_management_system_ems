@@ -5,6 +5,7 @@ import 'package:election_management_system_ems/Screens/Campaign%20Manager/drop_f
 import 'package:election_management_system_ems/Screens/Campaign%20Manager/drop_zone_widget.dart';
 import 'package:election_management_system_ems/Screens/Campaign%20Manager/filePicker.dart';
 import 'package:election_management_system_ems/Screens/Campaign%20Manager/file_data_model.dart';
+import 'package:election_management_system_ems/Screens/Campaign%20Manager/get_link.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:election_management_system_ems/Constant/style.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/topNavBar.dart';
@@ -207,7 +208,7 @@ class RegisterCandidatePage extends StatelessWidget {
               ]
               )
             ), Divider(color: Colors.black,height: 0,),
-            DragAndDrop(),
+            GetLink(),
         
             SizedBox(height: 50)
           ]
@@ -260,6 +261,8 @@ class _EmailState extends State<Email> {
       ]
     );
   }
+
+  //for email validation
    void validateEmail(String val) {
     if(val.isEmpty){
   setState(() {
@@ -278,6 +281,7 @@ class _EmailState extends State<Email> {
   }
 }
 
+//dropdown grade level
 class GradeLevel extends StatefulWidget {
   const GradeLevel({ Key? key }) : super(key: key);
 
@@ -365,6 +369,7 @@ class _GradeLevelState extends State<GradeLevel> {
   }
 }
 
+//dropdown for position
 class Position extends StatefulWidget {
   const Position({ Key? key }) : super(key: key);
 
@@ -527,6 +532,7 @@ class _PartylistState extends State<Partylist> {
   }
 }
 
+//uploading candidate display profile
 class ImagePicker extends StatefulWidget {
   const ImagePicker({ Key? key }) : super(key: key);
 
@@ -536,11 +542,13 @@ class ImagePicker extends StatefulWidget {
 
 class _ImagePickerState extends State<ImagePicker> {
   String fileName = '';
+  List<int>  picture = [];
+  String? name;
+   
   
   @override
   Widget build(BuildContext context) {
     var pick = Picker();
-    List<int> picture = [];
     return Container(
        alignment: Alignment.topLeft,
                 decoration: BoxDecoration(
@@ -548,12 +556,7 @@ class _ImagePickerState extends State<ImagePicker> {
                 ),
         child:Column(
           children: [
-              SizedBox(
-                child: Image.memory(Uint8List.fromList(picture),
-                  fit: BoxFit.fill,height: 200,width: 200),
               
-              ),
-              Padding(padding: EdgeInsets.only(top:20)),
               // ignore: deprecated_member_use
                FlatButton.icon(
                   onPressed: (){
@@ -565,6 +568,13 @@ class _ImagePickerState extends State<ImagePicker> {
                   }, 
                   icon: Icon(Icons.upload_file, color: Colors.black, size: 40,),
                   label: Text('Upload Picture  ' + fileName,) ),
+                   Padding(padding: EdgeInsets.only(top:20)),
+                  SizedBox(
+                child: Image.memory(Uint8List.fromList(picture),
+                  fit: BoxFit.fill,height: 200,width: 200),
+              
+              ),
+             
 
           ],
         )

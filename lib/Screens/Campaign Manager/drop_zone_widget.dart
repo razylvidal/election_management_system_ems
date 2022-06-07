@@ -54,7 +54,7 @@ class _DropZoneWidgetState extends State<DropZoneWidget> {
                         final events = await controller.pickFiles();
                         type: FileType.custom;
                         allowedExtensions: ['docx', 'pdf'];
-                        allowMultiple: false;
+                        allowMultiple: true;
                         if(events.isEmpty) return;
                         UploadedFile(events.first);
                       },
