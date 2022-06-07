@@ -616,6 +616,7 @@ class _ImagePickerState extends State<ImagePicker> {
                   pick.pickFile().then((value) {
                     setState(() {
                       fileName = value;
+                      candiPicture = pick.getImageBytes();
                     });
                   });
                 },
