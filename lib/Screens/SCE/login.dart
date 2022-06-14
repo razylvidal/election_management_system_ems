@@ -1,9 +1,9 @@
 import 'package:election_management_system_ems/Backend/LoginOperation.dart';
-import 'package:election_management_system_ems/Constant/style.dart';
+import 'package:election_management_system_ems/Screens/Campaign%20Manager/register_candidate.dart';
 import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
+import 'package:election_management_system_ems/Screens/Voters/ballot_page.dart';
 import 'package:election_management_system_ems/Screens/Voters/instruction.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -13,7 +13,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPage extends State<LoginPage> {
   String userType = 'SCE Admin';
   String department = 'JHS';
+
   List<String> userTypeList = ['SCE Admin', 'Voter', 'Campaign Manager'];
+
   List<String> departmenList = ['JHS', 'SHS'];
 
   var username = TextEditingController();
@@ -96,10 +98,14 @@ class _LoginPage extends State<LoginPage> {
                           return DropdownMenuItem<String>(
                             value: value,
                             child: Padding(
-                              padding: EdgeInsets.only(left: 25),
+                              padding: const EdgeInsets.only(
+                                left: 25,
+                              ),
                               child: Text(
                                 value,
-                                style: TextStyle(fontSize: 15),
+                                style: const TextStyle(
+                                  fontSize: 15,
+                                ),
                               ),
                             ),
                           );
@@ -108,7 +114,7 @@ class _LoginPage extends State<LoginPage> {
                     ),
                   ),
                 ),
-                //radio button for depertment
+                //radio button for department
                 Padding(
                   padding:
                       EdgeInsets.only(left: 100.0, bottom: 10.0, right: 100.0),
@@ -193,8 +199,9 @@ class _LoginPage extends State<LoginPage> {
                           decoration: InputDecoration(
                               prefixText: '   ',
                               suffixIcon: IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(Icons.visibility_off_outlined)),
+                                onPressed: () {},
+                                icon: Icon(Icons.visibility_off_outlined),
+                              ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide:
                                     BorderSide(color: Colors.grey, width: 2),
@@ -232,13 +239,11 @@ class _LoginPage extends State<LoginPage> {
                       onPressed: () {
                         var a = LoginOperation();
 
-                        a
-                            .userLogin(username.text, password.text, userType,
+                        a.userLogin(username.text, password.text, userType,
                                 department)
                             .then((value) {
                           if (value) {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (_) => HomePage()));
+                            routeUser(userType);
                           }
                         });
                       },
@@ -282,6 +287,26 @@ class _LoginPage extends State<LoginPage> {
         ],
       ),
     ));
+  }
+
+  // List<String> userTypeList = ['SCE Admin', 'Voter', 'Campaign Manager'];
+
+//route user to its views
+  void routeUser(String userType) {
+    switch (userType) {
+      case 'SCE Admin':
+        Navigator.push(context, MaterialPageRoute(builder: (_) => HomePage()));
+        break;
+      case 'Voter':
+        Navigator.push(
+            context, MaterialPageRoute(builder: (_) => BallotPage()));
+        break;
+      case 'Campaign Manager':
+        Navigator.push(context,
+            MaterialPageRoute(builder: (_) => const RegisterCandidatePage()));
+        break;
+      default:
+    }
   }
 }
 

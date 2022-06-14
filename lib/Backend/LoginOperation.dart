@@ -2,9 +2,10 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class LoginOperation {
-  Future<bool> userLogin(String username, String password, String userType,
+  Future<bool>  userLogin(String username, String password, String userType,
       String department) async {
     var payload = json.encode({
+      'UserType': userType,
       'Username': username,
       'Password': password,
     });

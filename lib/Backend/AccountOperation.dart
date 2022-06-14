@@ -15,8 +15,6 @@ class AccountOperation {
         },
       );
 
-      print("wow ${Mapping.accounts.toList()}");
-
       final parsed = jsonDecode(response.body).cast<Map<String, dynamic>>();
       Mapping.accounts = parsed
           .map<AccountModel>((json) => AccountModel.fromJson(json))
@@ -28,4 +26,6 @@ class AccountOperation {
       return [];
     }
   }
+
+  //verify ca
 }

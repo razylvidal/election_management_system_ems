@@ -218,18 +218,23 @@ class _AddUser extends State<AddUser> {
                   child: FlatButton(
                     onPressed: () {
                       var a = LoginOperation();
-
                       a
                           .addUser(username.text, password.text, email.text,
                               _originBranch)
                           .then((value) {
                         if (value) {
                           print("added");
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (_) => AccountPage()));
                         }
                       });
-                    },
+                      
+
+                      Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (_) =>
+                                                        AccountPage()));
+                                          },
+                    
                     child: const Text(
                       'Add User',
                       style: TextStyle(

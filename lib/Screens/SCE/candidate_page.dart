@@ -1,3 +1,5 @@
+import 'package:election_management_system_ems/Backend/CandidateOperation.dart';
+import 'package:election_management_system_ems/Models/CandidateModel.dart';
 import 'package:election_management_system_ems/Screens/SCE/Helpers/responsiveness.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/result.dart';
 import 'package:election_management_system_ems/Screens/SCE/add_candidate.dart';
@@ -110,86 +112,61 @@ class CandidateList extends StatefulWidget {
 
   @override
   _CandidateListState createState() => _CandidateListState();
+
+  final String status = '1';
 }
 
 class _CandidateListState extends State<CandidateList> {
-  // Generate a list of fiction prodcts
-  final List<Map<String, dynamic>> _allCandidates = [
-    {
-      "position": "President",
-      "name": "Floriane Mae Recto",
-      "partylist": "TINGOG",
-      "gradeLevel": " 12 - STEM",
-      "email": "flor@unc.edu.ph",
-      "status": "Verified"
-    },
-    {
-      "position": "President",
-      "name": "Brian Macatangay",
-      "partylist": "PADAYON",
-      "gradeLevel": " 12 - ABM",
-      "email": "brian@unc.edu.ph",
-      "status": "Verified"
-    },
-    {
-      "position": "Vice President",
-      "name": "Razyl Abbygail Vidal",
-      "partylist": "PADAYON",
-      "gradeLevel": " 12 - GAS",
-      "email": "razyl@unc.edu.ph",
-      "status": "Verified"
-    },
-    {
-      "position": "Vice President",
-      "name": "Michael Jude Jacinto",
-      "partylist": "TINGOG",
-      "gradeLevel": " 12 - TVL",
-      "email": "ong@unc.edu.ph",
-      "status": "Verified"
-    }
-  ];
+  var candid = CandidateOperation();
 
-  List<Map<String, dynamic>> _foundUsers = [];
+  late Future<List<CandidateModel>> verifiedCandid;
   @override
   initState() {
     // at the beginning, all users are shown
-    _foundUsers = _allCandidates;
+    verifiedCandid = candid.getCandidates(widget.status);
     super.initState();
   }
 
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: Container(
-        child: DataTable(
-          headingRowColor: MaterialStateProperty.all(Colors.red[200]),
-          columns: [
-            const DataColumn(label: Text('Position')),
-            const DataColumn(label: Text('Name')),
-            const DataColumn(label: Text('Partylist')),
-            const DataColumn(label: Text('Grade Level')),
-            const DataColumn(label: Text('Email Address')),
-            const DataColumn(label: Text('Status')),
-          ],
-          rows: _allCandidates.map((item) {
-            return DataRow(
-              cells: [
-                DataCell(Text(item['position'].toString())),
-                DataCell(Text(item['name'])),
-                DataCell(Text(item['partylist'].toString())),
-                DataCell(Text(item['gradeLevel'].toString())),
-                DataCell(Text(item['email'].toString())),
-                DataCell(Text(
-                  item['status'].toString(),
-                )),
+      child: FutureBuilder<List<CandidateModel>>(
+        future: verifiedCandid,
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const CircularProgressIndicator();
+          }
+          if (snapshot.hasData) {
+            return DataTable(
+              headingRowColor: MaterialStateProperty.all(Colors.red[200]),
+              columns: [
+                const DataColumn(label: Text('Position')),
+                const DataColumn(label: Text('Name')),
+                const DataColumn(label: Text('Partylist')),
+                const DataColumn(label: Text('Grade Level')),
               ],
-              onLongPress: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => ResultPage()));
-              },
+              rows: snapshot.data!.map((item) {
+                return DataRow(
+                  cells: [
+                    DataCell(Text(item.getPositionID)),
+                    DataCell(
+                      Text("${item.getFirstName} ${item.getLastname}"),
+                    ),
+                    DataCell(Text(item.getPartyListID)),
+                    DataCell(Text(item.getGradeLevelID)),
+                  ],
+                  onLongPress: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => ResultPage()));
+                  },
+                );
+              }).toList(),
             );
-          }).toList(),
-        ),
+          }
+
+          return const CircularProgressIndicator();
+        },
       ),
     );
   }

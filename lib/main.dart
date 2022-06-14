@@ -1,10 +1,15 @@
+import 'dart:developer';
+
 import 'package:election_management_system_ems/Screens/Campaign%20Manager/register_candidate.dart';
 import 'package:election_management_system_ems/Screens/SCE/Controllers/menuController.dart';
 import 'package:election_management_system_ems/Screens/SCE/Controllers/navigation_controller.dart';
 import 'package:election_management_system_ems/Screens/SCE/Routing/routes.dart';
+import 'package:election_management_system_ems/Screens/SCE/Widgets/accounts.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/add_user.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/create_election.dart';
+import 'package:election_management_system_ems/Screens/SCE/Widgets/menuItems.dart';
 import 'package:election_management_system_ems/Screens/SCE/Widgets/result.dart';
+import 'package:election_management_system_ems/Screens/SCE/Widgets/sideMenuItems.dart';
 import 'package:election_management_system_ems/Screens/SCE/hompage.dart';
 import 'package:election_management_system_ems/Screens/SCE/menu.dart';
 import 'package:election_management_system_ems/Screens/SCE/electionPage.dart';
@@ -30,7 +35,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner:false,
       title: 'Election Management System',
-      home: RegisterCandidatePage()
+      home: LoginPage()
 
     );
   }

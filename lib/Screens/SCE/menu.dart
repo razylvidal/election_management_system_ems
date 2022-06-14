@@ -9,23 +9,19 @@ import 'package:flutter/material.dart';
 import 'Widgets/topNavBar.dart';
 
 class SideMenu extends StatelessWidget {
-  
-   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
-   SideMenu({ Key? key }) : super(key: key);
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+  SideMenu({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TopNavBar(context, scaffoldKey),
-      body: Row(
-        children: [
-          Expanded (child: MenuItems()),
+        appBar: TopNavBar(context),
+        body: Row(children: [
+          Expanded(child: MenuItems()),
           Expanded(
             flex: 5,
             child: localNavigator(),
           )
-        ]
-      )
-    );
+        ]));
   }
 }

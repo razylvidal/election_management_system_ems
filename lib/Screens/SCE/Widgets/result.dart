@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
-   ResultPage({ Key? key }) : super(key: key);
+  ResultPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( 
-      appBar: TopNavBar(context, scaffoldKey),
+    return Scaffold(
+      appBar: TopNavBar(context),
       body: ShsResult(),
     );
   }
