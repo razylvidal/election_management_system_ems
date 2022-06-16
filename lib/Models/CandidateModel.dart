@@ -87,7 +87,7 @@ class CandidateModel {
       positionID: json['PositionID'] as String,
       partyListID: json['PartyListID'] as String,
       firstName: json['FirstName'] as String,
-      middlename: json['Middlename'] as String,
+      middlename: json['Middlename'] as String?,
       lastname: json['Lastname'] as String,
       status: json['Status'] as String,
       candidateID: json['CandidateID'] as int,

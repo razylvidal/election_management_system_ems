@@ -37,6 +37,8 @@ class AccountModel {
 
   AccountModel.empty();
 
+ // AccountModel.result({});
+
   AccountModel.json({
     this.accoundId,
     this.systemUserID,

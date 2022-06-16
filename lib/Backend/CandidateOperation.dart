@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:election_management_system_ems/Backend/Mapping.dart';
 import 'package:election_management_system_ems/Models/CandidateModel.dart';
+import 'package:election_management_system_ems/Models/ResultModel.dart';
 import 'package:http/http.dart' as http;
 
 class CandidateOperation {
@@ -96,6 +97,73 @@ class CandidateOperation {
     }
 
     return false;
+  }
+
+  Future<List<ResultModel>> getVoteResult() async {
+    var response;
+    //late Future<List<ResultModel>> result2;
+    List<ResultModel> result = [];
+    final List<String> title = [
+      'President',
+      'Vice President',
+      'Secretary',
+      'Treasurer',
+      'Auditor',
+      'P.I.O',
+      'TVL Representative',
+    ];
+    try {
+      for (int i = 0; i < title.length; i++) {
+        print('object ${title[i]}');
+        response = await http.get(
+          Uri.parse("http://localhost:8090/api/result/${title[i]}"),
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+        );
+        Map<String, dynamic> candi =
+            jsonDecode(response.body) as Map<String, dynamic>;
+
+        //result.add(ResultModel.fromJson(candi));
+
+        print(candi);
+
+        var admin = ResultModel.fromJson(candi);
+
+        result.add(
+          ResultModel.raw(
+            admin.getFirstName,
+            admin.getLastName,
+            admin.getPosition,
+            admin.getTotalVotes,
+          ),
+        );
+      }
+
+      print("result $result");
+
+      if (response.statusCode == 200) {
+        return result;
+      }
+    } catch (e) {
+      e.toString();
+      return [];
+    }
+
+    return [];
+  }
+
+  Future<ResultModel> getParsed(http.Response x) async {
+    print(x.body);
+    try {
+      final parsed = await jsonDecode(x.body).cast<Map<String, dynamic>>();
+      return await parsed
+          .map<ResultModel>((json) => ResultModel.fromJson(json));
+    } catch (e) {
+      e.toString();
+      return ResultModel.empty();
+    }
   }
 
   Future<bool> submitThisVoteResult(List<int> voteCount) async {

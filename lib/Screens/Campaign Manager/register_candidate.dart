@@ -221,7 +221,8 @@ class _RegisterCandidatePageState extends State<RegisterCandidatePage> {
                           )
                         ],
                       ),
-
+                    Row(
+                      children: [
                       //gradelevel dropdown
                       Padding(
                         padding: const EdgeInsets.only(top: 15.0, bottom: 10.0),
@@ -354,6 +355,8 @@ class _RegisterCandidatePageState extends State<RegisterCandidatePage> {
                           ),
                         ),
                       ),
+                      ]
+                    ),
 
                       Container(
                           width: 170,

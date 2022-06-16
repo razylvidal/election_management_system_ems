@@ -1,5 +1,6 @@
 // import 'dart:ui';
 import 'package:election_management_system_ems/Backend/CandidateOperation.dart';
+import 'package:election_management_system_ems/Backend/Mapping.dart';
 import 'package:election_management_system_ems/Models/CandidateModel.dart';
 import 'package:election_management_system_ems/Screens/Voters/topBar.dart';
 import 'package:flutter/material.dart';
@@ -65,6 +66,14 @@ class Position extends StatefulWidget {
     'Treasurer',
     'Auditor',
     'P.I.O',
+    'Representative',
+  ];
+
+  final List<String> gradeLevel = [
+    'Grade 12 - TVL',
+    'Grade 12 - ABM',
+    'Grade 12 - STEM',
+    'Grade 12 - GAS',
   ];
 }
 
@@ -85,6 +94,26 @@ class _PositionState extends State<Position> {
 
   List<CandidateModel> secondParty(List<CandidateModel> x) {
     return x.where((element) => element.getPartyListID == 'PADAYON').toList();
+  }
+
+  String determineGradeLevelCandidates(String position) {
+    if(position.contains('Representative')){
+    for (var item in widget.gradeLevel) {
+      if (Mapping.gradeLevelId == item) {
+        return 'Representative';
+      }
+    }
+    }
+
+    return 'None';
+  }
+
+  String candidate(String x, String y){
+    if(y == 'Grade 12 - TVL'){
+      return x;
+    }
+
+    return 'None';
   }
 
   @override
@@ -168,7 +197,7 @@ class _PositionState extends State<Position> {
                             fontWeight: FontWeight.bold,
                             fontSize: 15.0,
                           ),
-                          child: Text(candid1[index].toString(), maxLines: 2),
+                          child: Text(determineGradeLevelCandidates(candid1[index].getPositionID) == candid1[index].getGradeLevelID ? candidate(candid1[index].toString(), candid1[index].getGradeLevelID) : candid1[index].toString(), maxLines: 2),
                         ),
                         DefaultTextStyle(
                           style: const TextStyle(fontSize: 10),

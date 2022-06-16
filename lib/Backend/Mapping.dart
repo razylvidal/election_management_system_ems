@@ -5,4 +5,5 @@ class Mapping {
   static List<AccountModel> accounts = [];
   static List<CandidateModel> candidates = [];
   static List<CandidateModel> votedCandidates = [];
+  static String gradeLevelId = '';
 }

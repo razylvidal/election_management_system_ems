@@ -10,26 +10,30 @@ class CandidatePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
-          SizedBox(height: 30.0),
-          Row(children: [
-            Padding(padding: EdgeInsets.only(left: 50.0)),
-            Text(
-              'SSG Election 2022',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 30.0,
-              ),
-            ),
-          ]),
-          Padding(padding: EdgeInsets.only(top: 30.0)),
+          const SizedBox(height: 30.0),
           Row(
             children: [
-              Padding(padding: EdgeInsets.only(left: 50.0)),
+              const Padding(padding: EdgeInsets.only(left: 50.0)),
+              Text(
+                'SSG Election 2022',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30.0,
+                ),
+              ),
+            ],
+          ),
+          const Padding(padding: EdgeInsets.only(top: 30.0)),
+          Row(
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(left: 50.0),
+              ),
               Expanded(
                 child: TextField(
                   decoration: InputDecoration(
@@ -138,31 +142,38 @@ class _CandidateListState extends State<CandidateList> {
             return const CircularProgressIndicator();
           }
           if (snapshot.hasData) {
-            return DataTable(
-              headingRowColor: MaterialStateProperty.all(Colors.red[200]),
-              columns: [
-                const DataColumn(label: Text('Position')),
-                const DataColumn(label: Text('Name')),
-                const DataColumn(label: Text('Partylist')),
-                const DataColumn(label: Text('Grade Level')),
-              ],
-              rows: snapshot.data!.map((item) {
-                return DataRow(
-                  cells: [
-                    DataCell(Text(item.getPositionID)),
-                    DataCell(
-                      Text("${item.getFirstName} ${item.getLastname}"),
-                    ),
-                    DataCell(Text(item.getPartyListID)),
-                    DataCell(Text(item.getGradeLevelID)),
-                  ],
-                  onLongPress: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => ResultPage()));
-                  },
-                );
-              }).toList(),
-            );
+            try {
+              return DataTable(
+                headingRowColor: MaterialStateProperty.all(Colors.red[200]),
+                columns: [
+                  const DataColumn(label: Text('Position')),
+                  const DataColumn(label: Text('Name')),
+                  const DataColumn(label: Text('Partylist')),
+                  const DataColumn(label: Text('Grade Level')),
+                ],
+                rows: snapshot.data!.map((item) {
+                  return DataRow(
+                    cells: [
+                      DataCell(Text(item.getPositionID)),
+                      DataCell(
+                        Text("${item.getFirstName} ${item.getLastname}"),
+                      ),
+                      DataCell(Text(item.getPartyListID)),
+                      DataCell(Text(item.getGradeLevelID)),
+                    ],
+                    onLongPress: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => ResultPage()));
+                    },
+                  );
+                }).toList(),
+              );
+            } catch (e) {
+              print(e.toString());
+              return const Center(
+                child: Text('No data'),
+              );
+            }
           }
 
           return const CircularProgressIndicator();

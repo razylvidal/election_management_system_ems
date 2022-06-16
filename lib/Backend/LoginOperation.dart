@@ -1,8 +1,9 @@
 import 'dart:convert';
+import 'package:election_management_system_ems/Backend/Mapping.dart';
 import 'package:http/http.dart' as http;
 
 class LoginOperation {
-  Future<bool>  userLogin(String username, String password, String userType,
+  Future<bool> userLogin(String username, String password, String userType,
       String department) async {
     var payload = json.encode({
       'UserType': userType,
@@ -20,7 +21,10 @@ class LoginOperation {
         body: payload,
       );
 
+      //Map<String, String> gradeLevel = jsonDecode(response.body);
+      print("code  ${response.statusCode}");
       if (response.statusCode == 200) {
+        //Mapping.gradeLevelId = gradeLevel['GradeLevelID'].toString();
         return true;
       } else if (response.statusCode == 401) {
         return false;

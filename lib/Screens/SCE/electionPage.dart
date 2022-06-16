@@ -29,11 +29,11 @@ class ElectionPage extends StatelessWidget {
               Container(
                 child: Column(
                   children: [
-                   const SizedBox(height: 20.0),
+                    const SizedBox(height: 20.0),
                     Row(
                       children: [
-                        Padding(padding: EdgeInsets.only(left: 50.0)),
-                        Text(
+                        const Padding(padding: EdgeInsets.only(left: 50.0)),
+                        const Text(
                           'Election Name: ',
                           style: TextStyle(
                             fontSize: 20.0,
@@ -49,14 +49,14 @@ class ElectionPage extends StatelessWidget {
                               prefixText: '   ',
                               suffixIcon: const Icon(Icons.ballot_outlined),
                               enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.black,
                                   width: 1,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               border: OutlineInputBorder(
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.black,
                                   width: 1,
                                 ),
@@ -69,7 +69,7 @@ class ElectionPage extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Padding(
+                        const Padding(
                             padding: EdgeInsets.only(left: 50.0, top: 60.0)),
                         Text(
                           'Start Date: ',
@@ -94,8 +94,8 @@ class ElectionPage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               border: OutlineInputBorder(
-                                borderSide:
-                                    BorderSide(color: Colors.black, width: 1),
+                                borderSide: const BorderSide(
+                                    color: Colors.black, width: 1),
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
@@ -105,7 +105,7 @@ class ElectionPage extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Padding(
+                        const Padding(
                           padding: EdgeInsets.only(left: 50.0, top: 55.0),
                         ),
                         const Text(
@@ -115,8 +115,9 @@ class ElectionPage extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Padding(
-                            padding: EdgeInsets.only(left: 68.0, top: 55.0)),
+                        const Padding(
+                          padding: EdgeInsets.only(left: 68.0, top: 55.0),
+                        ),
                         Container(
                           width: 350.0,
                           height: 45.0,

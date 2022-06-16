@@ -239,7 +239,8 @@ class _LoginPage extends State<LoginPage> {
                       onPressed: () {
                         var a = LoginOperation();
 
-                        a.userLogin(username.text, password.text, userType,
+                        a
+                            .userLogin(username.text, password.text, userType,
                                 department)
                             .then((value) {
                           if (value) {
@@ -259,13 +260,13 @@ class _LoginPage extends State<LoginPage> {
                 ),
                 //forgot password button
                 Padding(
-                  padding: EdgeInsets.only(bottom: 5.0),
+                  padding: const EdgeInsets.only(bottom: 5.0),
                   child: TextButton.icon(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (_) => InstructionPage()));
+                                builder: (_) => const InstructionPage()));
                       },
                       icon: Icon(
                         Icons.info_outlined,
@@ -299,7 +300,7 @@ class _LoginPage extends State<LoginPage> {
         break;
       case 'Voter':
         Navigator.push(
-            context, MaterialPageRoute(builder: (_) => BallotPage()));
+            context, MaterialPageRoute(builder: (_) => const BallotPage()));
         break;
       case 'Campaign Manager':
         Navigator.push(context,
